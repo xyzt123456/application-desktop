@@ -32,14 +32,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -58,10 +58,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\client.cpp"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\client.cpp"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/client.cpp"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/client.cpp"
 },
 {
     "arguments": [
@@ -96,14 +96,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -122,10 +122,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\main.cpp"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\main.cpp"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/main.cpp"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/main.cpp"
 },
 {
     "arguments": [
@@ -160,14 +160,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -186,10 +186,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\mainwindow.cpp"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\mainwindow.cpp"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/mainwindow.cpp"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/mainwindow.cpp"
 },
 {
     "arguments": [
@@ -224,14 +224,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -250,10 +250,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\connection.cpp"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\connection.cpp"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/connection.cpp"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/connection.cpp"
 },
 {
     "arguments": [
@@ -288,14 +288,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -314,10 +314,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\client.h"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\client.h"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/client.h"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/client.h"
 },
 {
     "arguments": [
@@ -352,14 +352,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -378,10 +378,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\mainwindow.h"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\mainwindow.h"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/mainwindow.h"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/mainwindow.h"
 },
 {
     "arguments": [
@@ -416,14 +416,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -442,10 +442,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion\\connection.h"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client\\connection.h"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/Atelier_Connexion/connection.h"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/Gestion_client/connection.h"
 },
 {
     "arguments": [
@@ -480,14 +480,14 @@
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders",
         "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\Atelier_Connexion",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\Gestion_client",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtWidgets",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtGui",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtSql",
         "-IC:\\Qt\\6.3.2\\mingw_64\\include\\QtCore",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
-        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\debug",
+        "-IC:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug",
         "-IC:\\Qt\\6.3.2\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
         "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
@@ -506,9 +506,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Atelier_Connexion\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\ui_mainwindow.h"
+        "C:\\Users\\Elaa\\OneDrive\\Bureau\\Gestion_client\\build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug\\ui_mainwindow.h"
     ],
-    "directory": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Elaa/OneDrive/Bureau/Atelier_Connexion/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/ui_mainwindow.h"
+    "directory": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/Elaa/OneDrive/Bureau/Gestion_client/build-Gestion-client-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/ui_mainwindow.h"
 }
 ]
