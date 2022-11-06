@@ -1,0 +1,42 @@
+#include "mainwindow.h"
+#include "client.h"
+#include<QMessageBox>
+#include <QIntValidator>
+#include "ui_mainwindow.h"
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    ui->le_cin->setValidator= (new QIntValidator(100, 9999999, this));
+    ui->tab_client->setModel
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+
+
+
+void MainWindow::on_b_ajouter_clicked()
+{
+    int cin=ui->le_cin->text().toInt();
+    int tel=ui->le_tel->text().toInt();
+    QString nom=ui->le_nom->text();
+    QString prenom=ui->le_prenom->text();
+    QString adresse=ui->le_adresse->text();
+    QString date_naisc=ui->le_date_naisc->text();
+
+    Client C(cin,nom,prenom,tel,adresse);
+    
+    bool test=C.ajouter();
+    
+    if (test)
+        
+    {
+        QMessageBox::information (nullptr,QO)
+}
+
+
