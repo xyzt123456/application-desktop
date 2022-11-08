@@ -13,7 +13,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->le_mat->setValidator(new QIntValidator(0,99999999,this));
-    ui->tab_materiel->setModel(m.afficher());
+
+    /*if(ui->cb_tri->currentIndex()==0 && ui->cb_type_tri->currentIndex()==0)*/
+        ui->tab_materiel->setModel(m.afficher());
+    /*else if(ui->cb_tri->currentIndex()==2 && ui->cb_type_tri->currentIndex()==2)
+        ui->tab_materiel->setModel(m.tri_marque());
+    else if(ui->cb_tri->currentIndex()==2 && ui->cb_type_tri->currentIndex()==1)
+        ui->tab_materiel->setModel(m.tri_libelle());*/
+
+
     ui->le_mat_supp->setValidator(new QIntValidator(0,99999999,this));
 }
 
@@ -113,3 +121,11 @@ void MainWindow::on_pb_modifier_clicked()
 }
 
 
+
+
+
+void MainWindow::on_recherche_clicked()
+{
+    QString rech=ui->le_rech->text();
+    ui->tab_materiel->setModel(m.recherche(rech));
+}

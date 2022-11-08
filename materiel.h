@@ -36,7 +36,9 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier(int);
-
+    QSqlQueryModel * tri_libelle();
+    QSqlQueryModel * tri_marque();
+    QSqlQueryModel * recherche(QString);
 };
 
 #endif // MATERIEL_H

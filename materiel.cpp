@@ -92,3 +92,51 @@ bool Materiel::modifier(int mat)
 
 }
 
+QSqlQueryModel * Materiel::tri_libelle()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY libelle ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+
+QSqlQueryModel * Materiel::tri_marque()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY marque ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+
+QSqlQueryModel * Materiel::recherche(QString rech)
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel WHERE matricule like '"+rech+"%' or libelle like '"+rech+"%'");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+

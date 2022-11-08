@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1155</width>
-    <height>713</height>
+    <width>1272</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
-      <width>1131</width>
-      <height>651</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1271</width>
+      <height>701</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -148,15 +148,18 @@ QPushButton:pressed
 
 QComboBox
 {
-    selection-background-color: #ffaa00;
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    selection-background-color: #e0d0c1;
+background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #a07461, stop:.4 #bc8872);
+/*background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a07461, stop: 0.1 #b5836e, stop: 0.5 #b6836f, stop: 0.9 #ba8572, stop: 1 #bf8775);*/
+
     border-style: solid;
-    border: 1px solid #ffffff;
+    border: 1px solid #601700;
     border-radius: 5;
 }
 
 QComboBox:hover,QPushButton:hover
 {
+
     border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a07461, stop: 1 #c18c75);
 }
 
@@ -165,14 +168,15 @@ QComboBox:on
 {
     padding-top: 3px;
     padding-left: 4px;
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
-    selection-background-color: #ffaa00;
+  /*  background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #601700, stop: 0.1 #6f1a00, stop: 0.5 #751b00, stop: 0.9 #6a1500, stop: 1 #831e00);*/
+    selection-background-color: #601700;
 }
 
 QComboBox QAbstractItemView
 {
     border: 2px solid white;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #601700, stop: 0.1 #6f1a00, stop: 0.5 #751b00,/* stop: 0.9 #6a1500, */stop: 1 #831e00);
+    /*selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);*/
 }
 
 QComboBox::drop-down
@@ -502,7 +506,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>760</x>
-       <y>410</y>
+       <y>440</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -515,7 +519,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>760</x>
-       <y>450</y>
+       <y>480</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -531,7 +535,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>760</x>
-       <y>530</y>
+       <y>560</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -540,7 +544,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <string>SMS alerte</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="recherche">
      <property name="geometry">
       <rect>
        <x>840</x>
@@ -553,7 +557,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <string>recherche</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="le_rech">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -592,7 +596,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>760</x>
-       <y>490</y>
+       <y>520</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -607,11 +611,11 @@ p, li { white-space: pre-wrap; }
        <x>180</x>
        <y>170</y>
        <width>761</width>
-       <height>231</height>
+       <height>261</height>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -628,6 +632,82 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cb_tri">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>200</y>
+         <width>101</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Par Défaut</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Décroissant</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Croissant</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="cb_type_tri">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>200</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Matricule</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Libéllé</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Marque</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>200</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Trier dans l'ordre:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>200</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Par:</string>
        </property>
       </widget>
      </widget>
@@ -801,7 +881,7 @@ p, li { white-space: pre-wrap; }
          <x>0</x>
          <y>10</y>
          <width>641</width>
-         <height>181</height>
+         <height>211</height>
         </rect>
        </property>
        <property name="title">
@@ -915,7 +995,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1155</width>
+     <width>1272</width>
      <height>26</height>
     </rect>
    </property>
