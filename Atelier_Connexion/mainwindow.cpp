@@ -63,3 +63,49 @@ void MainWindow::on_pushButton_clicked()
          QObject::tr("suppression non effectue.\n"
                      "Click Cancel to exit."), QMessageBox::Cancel);
 }
+
+void MainWindow::on_pb_modifier_clicked()
+{
+    int id = ui->le_id_2->text().toInt();
+            int cin= ui->le_cin_2->text().toInt();
+             QString noun= ui->le_nom_2->text();
+             QString adresse= ui->le_adresse_2->text();
+             QString occupation= ui->le_occupation_2->text();
+             QString password= ui->le_mdp_2->text();
+
+
+
+           Employes E(id,cin,noun,adresse,occupation,password);
+            bool test=E.modifier(id);
+            if(test)
+            {
+
+                ui->tab_employe->setModel(E.afficher());//refresh
+                       QMessageBox::information(nullptr, QObject::tr("effectué"),
+                            QObject::tr(" Modifié.\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+                       ui->le_id_2->clear();
+                       ui->le_cin_2->clear();
+                       ui->le_nom_2->clear();
+                       ui->le_adresse_2->clear();
+                       ui->le_occupation_2->clear();
+                       ui->le_mdp_2->clear();
+
+           }
+            else
+            {
+                QMessageBox::critical(nullptr, QObject::tr("non effectué"),
+                            QObject::tr("non modifié !.\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+                ui->le_id_2->clear();
+                ui->le_cin_2->clear();
+                ui->le_nom_2->clear();
+                ui->le_adresse_2->clear();
+                ui->le_occupation_2->clear();
+                ui->le_mdp_2->clear();
+
+
+
+
+            }
+}

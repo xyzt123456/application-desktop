@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pb_modifier_clicked();
+
 private:
     Ui::MainWindow *ui;
     Employes E;

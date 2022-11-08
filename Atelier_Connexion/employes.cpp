@@ -77,4 +77,24 @@ QSqlQueryModel* Employes::afficher()
 return model;
 
 }
+bool Employes::modifier(int id)
+{
+    QSqlQuery query;
+
+       QString res= QString::number(id);
+       query.prepare("UPDATE Employe SET id=:id, cin=:cin, noun=:noun, adress=:adress,occupation=:occupation,password=:password WHERE id=:id ");
+
+       query.bindValue(":id", id);
+       query.bindValue(":cin", cin);
+       query.bindValue(":name", noun);
+       query.bindValue(":adress", adress);
+       query.bindValue(":occupation", occupation);
+       query.bindValue(":password", password);
+
+
+
+
+
+          return  query.exec();
+}
 
