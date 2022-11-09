@@ -109,3 +109,22 @@ void MainWindow::on_pb_modifier_clicked()
 
             }
 }
+
+
+void MainWindow::on_recherche_2_clicked()
+{
+    Employes Etmp;
+    ui->tab_employe->setModel(Etmp.recherche_employe(ui->recherche->text()));
+}
+
+void MainWindow::on_tri_id_clicked()
+{
+    Employes Etmp;
+    ui->tab_employe->setModel(Etmp.triID());
+}
+
+void MainWindow::on_tri_noun_clicked()
+{
+    Employes Etmp;
+    ui->tab_employe->setModel(Etmp.triNOM());
+}

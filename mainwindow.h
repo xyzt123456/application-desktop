@@ -22,6 +22,12 @@ private slots:
 
     void on_pb_modifier_clicked();
 
+    void on_recherche_2_clicked();
+
+    void on_tri_id_clicked();
+
+    void on_tri_noun_clicked();
+
 private:
     Ui::MainWindow *ui;
     Employes E;

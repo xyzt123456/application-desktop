@@ -97,4 +97,27 @@ bool Employes::modifier(int id)
 
           return  query.exec();
 }
+QSqlQueryModel * Employes::recherche_employe(QString search)
+{
+
+    QSqlQueryModel * model= new QSqlQueryModel();
+    QString qry="select * from employe where id like '%"+search+"%' or cin like '%"+search+"%' or noun like '%"+search+"%' or adress like '%"+search+"%' or occupation like '%"+search+"%' or password like '%"+search+"%' ";
+    qDebug()<<qry;
+    model->setQuery(qry);
+    return model;
+}
+QSqlQueryModel * Employes::triID()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM employe ORDER BY id");
+    return model;
+
+}
+QSqlQueryModel * Employes::triNOM()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM employe ORDER BY noun");
+    return model;
+
+}
 

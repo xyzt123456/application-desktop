@@ -3,7 +3,6 @@
 #include <QString>
 #include <QSqlQueryModel>
 
-
 class Employes
 {
 public:
@@ -25,7 +24,9 @@ public:
     bool supprimer(int id);
     QSqlQueryModel* afficher();
     bool modifier(int id);
-
+    QSqlQueryModel* recherche_employe(QString search);
+    QSqlQueryModel* triID();
+    QSqlQueryModel* triNOM();
 
 private:
     int id;
