@@ -9,11 +9,14 @@ class Client
 {
 public:
     Client();
-    Client(int,int,QString,QString,QString,QString);
+    Client(int,int,QString,QString,QString,QString,QString);
     bool ajouter();
     QSqlQueryModel *afficher();
     bool modifier();
     bool supprimer(int);
+
+    QSqlQueryModel *recherche_client (QString);
+    QSqlQueryModel *tri_nom();
 
     int getCin();
     int getTel();
@@ -21,6 +24,8 @@ public:
     QString getPrenom();
     QString getAdresse();
     QString getDate_naisc();
+    QString getType();
+
 
     void setCin(int);
     void setTel(int);
@@ -28,10 +33,12 @@ public:
     void setPrenom(QString);
     void setAdresse(QString);
     void setDate_naisc(QString);
+    void setType(QString);
+
 
  private :
     int cin,tel;
-    QString nom,prenom,adresse,date_naisc;
+    QString nom,prenom,adresse,date_naisc,type;
 };
 
 #endif // CLIENT_H

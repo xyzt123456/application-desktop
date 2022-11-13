@@ -21,10 +21,13 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -34,9 +37,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QTabWidget *tabWidget;
+    QTabWidget *Ajouter_2;
     QWidget *tab;
-    QGroupBox *groupBox;
+    QGroupBox *Ajouter;
     QLabel *cin;
     QLabel *nom;
     QLabel *prenom;
@@ -49,33 +52,47 @@ public:
     QLineEdit *le_tel;
     QLineEdit *le_adresse;
     QPushButton *b_ajouter;
-    QDateEdit *dateEdit_2;
+    QDateEdit *la_date;
+    QRadioButton *rb1;
+    QRadioButton *rb2;
+    QLabel *type;
+    QWidget *tab_3;
+    QGroupBox *Ajouter_3;
+    QLabel *cin_3;
+    QLineEdit *le_cin_3;
+    QLabel *nom_2;
+    QLineEdit *le_nom_2;
+    QLabel *prenom_2;
+    QLineEdit *le_prenom_2;
+    QLabel *date_naisc_2;
+    QDateEdit *dateEdit;
+    QLabel *tel_2;
+    QLineEdit *le_tel_2;
+    QLabel *adresse_2;
+    QLineEdit *le_adresse_2;
+    QPushButton *b_modifier;
     QWidget *tab_2;
     QTableView *tab_client;
-    QWidget *tab_3;
-    QLabel *adresse_2;
-    QLabel *prenom_2;
-    QLabel *nom_2;
-    QLabel *cin_3;
-    QLabel *tel_2;
-    QLineEdit *le_cin_3;
-    QLineEdit *le_adresse_2;
-    QLineEdit *le_tel_2;
-    QLabel *date_naisc_2;
-    QLineEdit *le_nom_2;
-    QLineEdit *le_prenom_2;
-    QPushButton *b_modifier;
-    QDateEdit *dateEdit;
+    QPushButton *tri;
+    QLineEdit *la_recherche;
+    QPushButton *rechercher;
+    QPushButton *pdf;
     QWidget *tab_4;
     QGroupBox *groupBox_2;
     QPushButton *b_supprimer;
     QLineEdit *le_cin_2;
     QLabel *cin_2;
     QWidget *tab_6;
+    QPlainTextEdit *plainTextEdit;
+    QPushButton *pushButton_3;
+    QLineEdit *lineEdit;
+    QTextEdit *textEdit;
+    QTextEdit *textEdit_2;
+    QTextEdit *textEdit_3;
+    QLineEdit *lineEdit_2;
     QWidget *tab_5;
+    QWidget *tab_13;
     QLabel *label;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
     QMenuBar *menuBar;
     QMenu *menuGESTION_DES_CLIENTS;
     QToolBar *mainToolBar;
@@ -85,7 +102,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1029, 586);
+        MainWindow->resize(1350, 634);
         MainWindow->setStyleSheet(QLatin1String("QToolTip\n"
 "{\n"
 "     border: 1px white ;\n"
@@ -570,10 +587,10 @@ public:
 "}"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(30, 70, 851, 441));
-        tabWidget->setStyleSheet(QLatin1String("QToolTip\n"
+        Ajouter_2 = new QTabWidget(centralWidget);
+        Ajouter_2->setObjectName(QStringLiteral("Ajouter_2"));
+        Ajouter_2->setGeometry(QRect(30, 70, 1081, 471));
+        Ajouter_2->setStyleSheet(QLatin1String("QToolTip\n"
 "{\n"
 "     border: 1px white ;\n"
 "     background-color: #601700;\n"
@@ -1057,99 +1074,139 @@ public:
 "}"));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        groupBox = new QGroupBox(tab);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(10, 10, 81, 21));
+        Ajouter = new QGroupBox(tab);
+        Ajouter->setObjectName(QStringLiteral("Ajouter"));
+        Ajouter->setGeometry(QRect(10, 10, 1031, 411));
         cin = new QLabel(tab);
         cin->setObjectName(QStringLiteral("cin"));
         cin->setGeometry(QRect(50, 60, 63, 20));
         nom = new QLabel(tab);
         nom->setObjectName(QStringLiteral("nom"));
-        nom->setGeometry(QRect(40, 110, 71, 20));
+        nom->setGeometry(QRect(50, 110, 71, 20));
         prenom = new QLabel(tab);
         prenom->setObjectName(QStringLiteral("prenom"));
         prenom->setGeometry(QRect(50, 160, 63, 20));
         date_naisc = new QLabel(tab);
         date_naisc->setObjectName(QStringLiteral("date_naisc"));
-        date_naisc->setGeometry(QRect(10, 210, 141, 20));
+        date_naisc->setGeometry(QRect(50, 210, 141, 20));
         tel = new QLabel(tab);
         tel->setObjectName(QStringLiteral("tel"));
-        tel->setGeometry(QRect(40, 270, 81, 20));
+        tel->setGeometry(QRect(50, 270, 81, 20));
         adresse = new QLabel(tab);
         adresse->setObjectName(QStringLiteral("adresse"));
-        adresse->setGeometry(QRect(50, 320, 63, 20));
+        adresse->setGeometry(QRect(40, 360, 101, 20));
         le_cin = new QLineEdit(tab);
         le_cin->setObjectName(QStringLiteral("le_cin"));
-        le_cin->setGeometry(QRect(170, 60, 113, 26));
+        le_cin->setGeometry(QRect(170, 60, 141, 26));
         le_nom = new QLineEdit(tab);
         le_nom->setObjectName(QStringLiteral("le_nom"));
-        le_nom->setGeometry(QRect(170, 110, 113, 26));
+        le_nom->setGeometry(QRect(170, 110, 141, 26));
         le_prenom = new QLineEdit(tab);
         le_prenom->setObjectName(QStringLiteral("le_prenom"));
-        le_prenom->setGeometry(QRect(170, 160, 113, 26));
+        le_prenom->setGeometry(QRect(170, 160, 141, 26));
         le_tel = new QLineEdit(tab);
         le_tel->setObjectName(QStringLiteral("le_tel"));
-        le_tel->setGeometry(QRect(170, 270, 113, 26));
+        le_tel->setGeometry(QRect(170, 270, 141, 26));
         le_adresse = new QLineEdit(tab);
         le_adresse->setObjectName(QStringLiteral("le_adresse"));
-        le_adresse->setGeometry(QRect(170, 320, 113, 26));
+        le_adresse->setGeometry(QRect(170, 360, 141, 26));
         b_ajouter = new QPushButton(tab);
         b_ajouter->setObjectName(QStringLiteral("b_ajouter"));
         b_ajouter->setGeometry(QRect(390, 360, 101, 29));
         b_ajouter->setStyleSheet(QStringLiteral("font: 11pt \"Segoe UI\";"));
-        dateEdit_2 = new QDateEdit(tab);
-        dateEdit_2->setObjectName(QStringLiteral("dateEdit_2"));
-        dateEdit_2->setGeometry(QRect(170, 210, 110, 26));
-        tabWidget->addTab(tab, QString());
+        la_date = new QDateEdit(tab);
+        la_date->setObjectName(QStringLiteral("la_date"));
+        la_date->setGeometry(QRect(200, 210, 101, 26));
+        rb1 = new QRadioButton(tab);
+        rb1->setObjectName(QStringLiteral("rb1"));
+        rb1->setGeometry(QRect(150, 320, 97, 20));
+        rb2 = new QRadioButton(tab);
+        rb2->setObjectName(QStringLiteral("rb2"));
+        rb2->setGeometry(QRect(290, 320, 131, 20));
+        type = new QLabel(tab);
+        type->setObjectName(QStringLiteral("type"));
+        type->setGeometry(QRect(50, 320, 81, 20));
+        Ajouter_2->addTab(tab, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        Ajouter_3 = new QGroupBox(tab_3);
+        Ajouter_3->setObjectName(QStringLiteral("Ajouter_3"));
+        Ajouter_3->setGeometry(QRect(20, 10, 1031, 411));
+        cin_3 = new QLabel(Ajouter_3);
+        cin_3->setObjectName(QStringLiteral("cin_3"));
+        cin_3->setGeometry(QRect(40, 60, 63, 20));
+        le_cin_3 = new QLineEdit(Ajouter_3);
+        le_cin_3->setObjectName(QStringLiteral("le_cin_3"));
+        le_cin_3->setGeometry(QRect(100, 60, 113, 26));
+        nom_2 = new QLabel(Ajouter_3);
+        nom_2->setObjectName(QStringLiteral("nom_2"));
+        nom_2->setGeometry(QRect(30, 120, 71, 20));
+        le_nom_2 = new QLineEdit(Ajouter_3);
+        le_nom_2->setObjectName(QStringLiteral("le_nom_2"));
+        le_nom_2->setGeometry(QRect(90, 110, 113, 26));
+        prenom_2 = new QLabel(Ajouter_3);
+        prenom_2->setObjectName(QStringLiteral("prenom_2"));
+        prenom_2->setGeometry(QRect(20, 170, 63, 20));
+        le_prenom_2 = new QLineEdit(Ajouter_3);
+        le_prenom_2->setObjectName(QStringLiteral("le_prenom_2"));
+        le_prenom_2->setGeometry(QRect(110, 160, 113, 26));
+        date_naisc_2 = new QLabel(Ajouter_3);
+        date_naisc_2->setObjectName(QStringLiteral("date_naisc_2"));
+        date_naisc_2->setGeometry(QRect(20, 220, 141, 20));
+        dateEdit = new QDateEdit(Ajouter_3);
+        dateEdit->setObjectName(QStringLiteral("dateEdit"));
+        dateEdit->setGeometry(QRect(170, 210, 110, 26));
+        tel_2 = new QLabel(Ajouter_3);
+        tel_2->setObjectName(QStringLiteral("tel_2"));
+        tel_2->setGeometry(QRect(20, 260, 81, 20));
+        le_tel_2 = new QLineEdit(Ajouter_3);
+        le_tel_2->setObjectName(QStringLiteral("le_tel_2"));
+        le_tel_2->setGeometry(QRect(170, 260, 113, 26));
+        adresse_2 = new QLabel(Ajouter_3);
+        adresse_2->setObjectName(QStringLiteral("adresse_2"));
+        adresse_2->setGeometry(QRect(20, 320, 63, 20));
+        le_adresse_2 = new QLineEdit(Ajouter_3);
+        le_adresse_2->setObjectName(QStringLiteral("le_adresse_2"));
+        le_adresse_2->setGeometry(QRect(160, 310, 113, 26));
+        b_modifier = new QPushButton(Ajouter_3);
+        b_modifier->setObjectName(QStringLiteral("b_modifier"));
+        b_modifier->setGeometry(QRect(460, 310, 93, 29));
+        b_modifier->setStyleSheet(QStringLiteral("font: 11pt \"Segoe UI\";"));
+        Ajouter_2->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         tab_client = new QTableView(tab_2);
         tab_client->setObjectName(QStringLiteral("tab_client"));
-        tab_client->setGeometry(QRect(20, 20, 941, 351));
-        tabWidget->addTab(tab_2, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        adresse_2 = new QLabel(tab_3);
-        adresse_2->setObjectName(QStringLiteral("adresse_2"));
-        adresse_2->setGeometry(QRect(80, 310, 63, 20));
-        prenom_2 = new QLabel(tab_3);
-        prenom_2->setObjectName(QStringLiteral("prenom_2"));
-        prenom_2->setGeometry(QRect(90, 160, 63, 20));
-        nom_2 = new QLabel(tab_3);
-        nom_2->setObjectName(QStringLiteral("nom_2"));
-        nom_2->setGeometry(QRect(100, 110, 71, 20));
-        cin_3 = new QLabel(tab_3);
-        cin_3->setObjectName(QStringLiteral("cin_3"));
-        cin_3->setGeometry(QRect(100, 70, 63, 20));
-        tel_2 = new QLabel(tab_3);
-        tel_2->setObjectName(QStringLiteral("tel_2"));
-        tel_2->setGeometry(QRect(80, 260, 81, 20));
-        le_cin_3 = new QLineEdit(tab_3);
-        le_cin_3->setObjectName(QStringLiteral("le_cin_3"));
-        le_cin_3->setGeometry(QRect(210, 70, 113, 26));
-        le_adresse_2 = new QLineEdit(tab_3);
-        le_adresse_2->setObjectName(QStringLiteral("le_adresse_2"));
-        le_adresse_2->setGeometry(QRect(210, 320, 113, 26));
-        le_tel_2 = new QLineEdit(tab_3);
-        le_tel_2->setObjectName(QStringLiteral("le_tel_2"));
-        le_tel_2->setGeometry(QRect(210, 260, 113, 26));
-        date_naisc_2 = new QLabel(tab_3);
-        date_naisc_2->setObjectName(QStringLiteral("date_naisc_2"));
-        date_naisc_2->setGeometry(QRect(70, 210, 141, 20));
-        le_nom_2 = new QLineEdit(tab_3);
-        le_nom_2->setObjectName(QStringLiteral("le_nom_2"));
-        le_nom_2->setGeometry(QRect(210, 110, 113, 26));
-        le_prenom_2 = new QLineEdit(tab_3);
-        le_prenom_2->setObjectName(QStringLiteral("le_prenom_2"));
-        le_prenom_2->setGeometry(QRect(210, 160, 113, 26));
-        b_modifier = new QPushButton(tab_3);
-        b_modifier->setObjectName(QStringLiteral("b_modifier"));
-        b_modifier->setGeometry(QRect(440, 350, 93, 29));
-        b_modifier->setStyleSheet(QStringLiteral("font: 11pt \"Segoe UI\";"));
-        dateEdit = new QDateEdit(tab_3);
-        dateEdit->setObjectName(QStringLiteral("dateEdit"));
-        dateEdit->setGeometry(QRect(210, 210, 110, 26));
-        tabWidget->addTab(tab_3, QString());
+        tab_client->setGeometry(QRect(10, 60, 951, 361));
+        tri = new QPushButton(tab_2);
+        tri->setObjectName(QStringLiteral("tri"));
+        tri->setGeometry(QRect(970, 60, 93, 29));
+        la_recherche = new QLineEdit(tab_2);
+        la_recherche->setObjectName(QStringLiteral("la_recherche"));
+        la_recherche->setGeometry(QRect(140, 10, 331, 26));
+        rechercher = new QPushButton(tab_2);
+        rechercher->setObjectName(QStringLiteral("rechercher"));
+        rechercher->setGeometry(QRect(490, 10, 93, 29));
+        rechercher->setStyleSheet(QLatin1String("QToolTip\n"
+"{\n"
+"     border: 1px white ;\n"
+"     background-color: #601700;\n"
+"     padding: 1px;\n"
+"     border-radius: 3px;\n"
+"     opacity: 100;\n"
+"}"));
+        pdf = new QPushButton(tab_2);
+        pdf->setObjectName(QStringLiteral("pdf"));
+        pdf->setGeometry(QRect(970, 110, 93, 29));
+        pdf->setStyleSheet(QLatin1String("QToolTip\n"
+"{\n"
+"     border: 1px white ;\n"
+"     background-color: #601700;\n"
+"     padding: 1px;\n"
+"     border-radius: 3px;\n"
+"     opacity: 100;\n"
+"}"));
+        Ajouter_2->addTab(tab_2, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         groupBox_2 = new QGroupBox(tab_4);
@@ -1166,36 +1223,46 @@ public:
         cin_2 = new QLabel(groupBox_2);
         cin_2->setObjectName(QStringLiteral("cin_2"));
         cin_2->setGeometry(QRect(50, 120, 63, 20));
-        tabWidget->addTab(tab_4, QString());
+        Ajouter_2->addTab(tab_4, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
-        tabWidget->addTab(tab_6, QString());
+        plainTextEdit = new QPlainTextEdit(tab_6);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(30, 180, 551, 231));
+        pushButton_3 = new QPushButton(tab_6);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(600, 380, 93, 29));
+        lineEdit = new QLineEdit(tab_6);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(130, 30, 211, 26));
+        textEdit = new QTextEdit(tab_6);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(20, 30, 104, 31));
+        textEdit_2 = new QTextEdit(tab_6);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        textEdit_2->setGeometry(QRect(30, 140, 61, 31));
+        textEdit_3 = new QTextEdit(tab_6);
+        textEdit_3->setObjectName(QStringLiteral("textEdit_3"));
+        textEdit_3->setGeometry(QRect(20, 70, 104, 31));
+        lineEdit_2 = new QLineEdit(tab_6);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(130, 70, 211, 26));
+        Ajouter_2->addTab(tab_6, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        tabWidget->addTab(tab_5, QString());
+        Ajouter_2->addTab(tab_5, QString());
+        tab_13 = new QWidget();
+        tab_13->setObjectName(QStringLiteral("tab_13"));
+        Ajouter_2->addTab(tab_13, QString());
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(270, 10, 521, 61));
         label->setStyleSheet(QLatin1String("color: rgb(96, 23, 0);\n"
 "font: 26pt \"Sitka\";"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(900, 220, 93, 29));
-        pushButton->setStyleSheet(QLatin1String("QToolTip\n"
-"{\n"
-"     border: 1px white ;\n"
-"     background-color: #601700;\n"
-"     padding: 1px;\n"
-"     border-radius: 3px;\n"
-"     opacity: 100;\n"
-"}"));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(900, 300, 93, 29));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1029, 26));
+        menuBar->setGeometry(QRect(0, 0, 1350, 26));
         menuGESTION_DES_CLIENTS = new QMenu(menuBar);
         menuGESTION_DES_CLIENTS->setObjectName(QStringLiteral("menuGESTION_DES_CLIENTS"));
         MainWindow->setMenuBar(menuBar);
@@ -1210,7 +1277,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        Ajouter_2->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1219,33 +1286,64 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Gestion des Clients", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        Ajouter_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">Statistique</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        Ajouter->setTitle(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
         cin->setText(QApplication::translate("MainWindow", "CIN", Q_NULLPTR));
         nom->setText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
         prenom->setText(QApplication::translate("MainWindow", "Pr\303\251nom", Q_NULLPTR));
-        date_naisc->setText(QApplication::translate("MainWindow", "Date de naissaince ", Q_NULLPTR));
+        date_naisc->setText(QApplication::translate("MainWindow", "Date de naissance ", Q_NULLPTR));
         tel->setText(QApplication::translate("MainWindow", "T\303\251l\303\251phone", Q_NULLPTR));
-        adresse->setText(QApplication::translate("MainWindow", "Adresse", Q_NULLPTR));
+        adresse->setText(QApplication::translate("MainWindow", "Adresse-mail", Q_NULLPTR));
         b_ajouter->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Afficher", Q_NULLPTR));
-        adresse_2->setText(QApplication::translate("MainWindow", "Adresse", Q_NULLPTR));
-        prenom_2->setText(QApplication::translate("MainWindow", "Pr\303\251nom", Q_NULLPTR));
-        nom_2->setText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
+        rb1->setText(QApplication::translate("MainWindow", "Etudiant(e)", Q_NULLPTR));
+        rb2->setText(QApplication::translate("MainWindow", "Fonctionnaire", Q_NULLPTR));
+        type->setText(QApplication::translate("MainWindow", "Type", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab), QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+        Ajouter_3->setTitle(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
         cin_3->setText(QApplication::translate("MainWindow", "CIN", Q_NULLPTR));
+        nom_2->setText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
+        prenom_2->setText(QApplication::translate("MainWindow", "Pr\303\251nom", Q_NULLPTR));
+        date_naisc_2->setText(QApplication::translate("MainWindow", "Date de naissance ", Q_NULLPTR));
         tel_2->setText(QApplication::translate("MainWindow", "T\303\251l\303\251phone", Q_NULLPTR));
-        date_naisc_2->setText(QApplication::translate("MainWindow", "Date de naissaince ", Q_NULLPTR));
+        adresse_2->setText(QApplication::translate("MainWindow", "Adresse", Q_NULLPTR));
         b_modifier->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_3), QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        tri->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Tri par CIN</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        tri->setText(QApplication::translate("MainWindow", "Tri par nom", Q_NULLPTR));
+        rechercher->setText(QApplication::translate("MainWindow", "Rechercher", Q_NULLPTR));
+        pdf->setText(QApplication::translate("MainWindow", "PDF", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_2), QApplication::translate("MainWindow", "Afficher", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
         b_supprimer->setText(QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
         cin_2->setText(QApplication::translate("MainWindow", "CIN", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "Mailing", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Client fid\303\250le", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_4), QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pushButton_3->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Envoyer</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        pushButton_3->setText(QApplication::translate("MainWindow", "Envoyer", Q_NULLPTR));
+        textEdit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Adresse-mail </span></p></body></html>", Q_NULLPTR));
+        textEdit_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Text :</span></p></body></html>", Q_NULLPTR));
+        textEdit_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:9pt;\">Mot de passe</span></p></body></html>", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_6), QApplication::translate("MainWindow", "Mailing", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_5), QApplication::translate("MainWindow", "Client fid\303\250le", Q_NULLPTR));
+        Ajouter_2->setTabText(Ajouter_2->indexOf(tab_13), QApplication::translate("MainWindow", "Page", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "GESTION DES CLIENTS", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "PDF", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Imprimer", Q_NULLPTR));
         menuGESTION_DES_CLIENTS->setTitle(QApplication::translate("MainWindow", "GESTION DES CLIENTS", Q_NULLPTR));
     } // retranslateUi
 

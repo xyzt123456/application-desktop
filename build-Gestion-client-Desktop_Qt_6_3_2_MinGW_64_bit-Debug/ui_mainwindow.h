@@ -17,13 +17,16 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -71,10 +74,21 @@ public:
     QLineEdit *le_cin_2;
     QLabel *cin_2;
     QWidget *tab_6;
+    QPlainTextEdit *plainTextEdit;
+    QPushButton *pushButton_3;
+    QLineEdit *lineEdit;
+    QTextEdit *textEdit;
+    QTextEdit *textEdit_2;
     QWidget *tab_5;
     QLabel *label;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLineEdit *lineEdit_2;
+    QTextEdit *textEdit_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
+    QListView *listView;
     QMenuBar *menuBar;
     QMenu *menuGESTION_DES_CLIENTS;
     QToolBar *mainToolBar;
@@ -84,7 +98,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1029, 586);
+        MainWindow->resize(1350, 634);
         MainWindow->setStyleSheet(QString::fromUtf8("QToolTip\n"
 "{\n"
 "     border: 1px white ;\n"
@@ -571,7 +585,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(30, 70, 851, 441));
+        tabWidget->setGeometry(QRect(30, 150, 711, 471));
         tabWidget->setStyleSheet(QString::fromUtf8("QToolTip\n"
 "{\n"
 "     border: 1px white ;\n"
@@ -1104,7 +1118,7 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tab_client = new QTableView(tab_2);
         tab_client->setObjectName(QString::fromUtf8("tab_client"));
-        tab_client->setGeometry(QRect(20, 20, 941, 351));
+        tab_client->setGeometry(QRect(0, 20, 661, 351));
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -1119,7 +1133,7 @@ public:
         nom_2->setGeometry(QRect(100, 110, 71, 20));
         cin_3 = new QLabel(tab_3);
         cin_3->setObjectName(QString::fromUtf8("cin_3"));
-        cin_3->setGeometry(QRect(100, 70, 63, 20));
+        cin_3->setGeometry(QRect(60, 40, 63, 20));
         tel_2 = new QLabel(tab_3);
         tel_2->setObjectName(QString::fromUtf8("tel_2"));
         tel_2->setGeometry(QRect(80, 260, 81, 20));
@@ -1168,6 +1182,21 @@ public:
         tabWidget->addTab(tab_4, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
+        plainTextEdit = new QPlainTextEdit(tab_6);
+        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(30, 130, 551, 231));
+        pushButton_3 = new QPushButton(tab_6);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(600, 330, 93, 29));
+        lineEdit = new QLineEdit(tab_6);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(130, 30, 211, 26));
+        textEdit = new QTextEdit(tab_6);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(20, 30, 104, 31));
+        textEdit_2 = new QTextEdit(tab_6);
+        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
+        textEdit_2->setGeometry(QRect(40, 100, 61, 31));
         tabWidget->addTab(tab_6, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
@@ -1179,7 +1208,7 @@ public:
 "font: 26pt \"Sitka\";"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(900, 220, 93, 29));
+        pushButton->setGeometry(QRect(880, 250, 93, 29));
         pushButton->setStyleSheet(QString::fromUtf8("QToolTip\n"
 "{\n"
 "     border: 1px white ;\n"
@@ -1190,11 +1219,31 @@ public:
 "}"));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(900, 300, 93, 29));
+        pushButton_2->setGeometry(QRect(1000, 250, 93, 29));
+        lineEdit_2 = new QLineEdit(centralWidget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(850, 180, 191, 26));
+        textEdit_3 = new QTextEdit(centralWidget);
+        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
+        textEdit_3->setGeometry(QRect(750, 180, 91, 31));
+        pushButton_4 = new QPushButton(centralWidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(1060, 180, 81, 21));
+        pushButton_5 = new QPushButton(centralWidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(760, 250, 93, 29));
+        pushButton_6 = new QPushButton(centralWidget);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setGeometry(QRect(1140, 250, 93, 29));
+        pushButton_6->setMinimumSize(QSize(93, 0));
+        pushButton_6->setMaximumSize(QSize(93, 29));
+        listView = new QListView(centralWidget);
+        listView->setObjectName(QString::fromUtf8("listView"));
+        listView->setGeometry(QRect(900, 300, 256, 192));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1029, 26));
+        menuBar->setGeometry(QRect(0, 0, 1350, 26));
         menuGESTION_DES_CLIENTS = new QMenu(menuBar);
         menuGESTION_DES_CLIENTS->setObjectName(QString::fromUtf8("menuGESTION_DES_CLIENTS"));
         MainWindow->setMenuBar(menuBar);
@@ -1209,7 +1258,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1240,11 +1289,39 @@ public:
         b_supprimer->setText(QCoreApplication::translate("MainWindow", "Supprimer", nullptr));
         cin_2->setText(QCoreApplication::translate("MainWindow", "CIN", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Supprimer", nullptr));
+#if QT_CONFIG(tooltip)
+        pushButton_3->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Envoyer</span></p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Envoyer", nullptr));
+        textEdit->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Adresse-mail</p></body></html>", nullptr));
+        textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Text :</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QCoreApplication::translate("MainWindow", "Mailing", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("MainWindow", "Client fid\303\250le", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "GESTION DES CLIENTS", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Imprimer", nullptr));
+        textEdit_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Rechercher</p></body></html>", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
+#if QT_CONFIG(tooltip)
+        pushButton_5->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Tri par CIN</span></p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Tri par CIN", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("MainWindow", "Statistique", nullptr));
         menuGESTION_DES_CLIENTS->setTitle(QCoreApplication::translate("MainWindow", "GESTION DES CLIENTS", nullptr));
     } // retranslateUi
 

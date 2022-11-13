@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
+
+
 #include"client.h"
 namespace Ui {
 class MainWindow;
@@ -22,6 +24,12 @@ private slots:
     void on_b_supprimer_clicked();
 
     void on_b_modifier_clicked();
+
+    void on_rechercher_clicked();
+
+    void on_pdf_clicked();
+
+    void on_tri_clicked();
 
 private:
     Ui::MainWindow *ui;
