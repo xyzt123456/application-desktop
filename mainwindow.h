@@ -28,6 +28,14 @@ private slots:
 
     void on_tri_noun_clicked();
 
+
+
+    void on_PDF_clicked();
+
+    void on_statistique_clicked();
+
+    void on_qr_clicked();
+
 private:
     Ui::MainWindow *ui;
     Employes E;

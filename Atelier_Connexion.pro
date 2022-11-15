@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui sql
-
+QT +=charts
+QT +=svg
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion
@@ -26,19 +27,32 @@ CONFIG += c++11
 
 SOURCES += \
     employes.cpp \
+    login.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    qrcode.cpp \
+    qrgeneratordemo.cpp \
+    qrgeneratorwork.cpp \
+    qrwidget.cpp
 
 HEADERS += \
     employes.h \
+    login.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    qrcode.h \
+    qrgeneratorwork.h \
+    qrwidget.h
 
 FORMS += \
+        login.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    ressource.qrc

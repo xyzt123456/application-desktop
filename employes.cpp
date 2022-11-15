@@ -36,6 +36,9 @@ void Employes::setnoun(QString noun){this->noun=noun;};
 void Employes::setadress(QString adress){this->adress=adress;};
 void Employes::setoccupation(QString occupation){this->occupation=occupation;};
 void Employes::setpassword(QString password){this->password=password;};
+
+
+
 bool Employes::ajouter()
 {
     QSqlQuery query;
@@ -118,6 +121,17 @@ QSqlQueryModel * Employes::triNOM()
     QSqlQueryModel * model= new QSqlQueryModel();
     model->setQuery("SELECT * FROM employe ORDER BY noun");
     return model;
+
+}
+int Employes::statistiquesemployes(QString occ)
+{
+    QSqlQuery query;
+    query.prepare("select count(*) from employe where occupation=:occ ");
+    query.bindValue(":occ",occ);
+    query.exec();
+    query.next();
+
+    return query.value(0).toInt();
 
 }
 

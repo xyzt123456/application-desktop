@@ -27,6 +27,7 @@ public:
     QSqlQueryModel* recherche_employe(QString search);
     QSqlQueryModel* triID();
     QSqlQueryModel* triNOM();
+    int statistiquesemployes(QString occ);
 
 private:
     int id;
