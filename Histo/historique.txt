@@ -1,0 +1,9 @@
+############################ H I S T O R I Q U E ############################
++ Tue Nov 15 14:25:53 2022 Une réservation a été ajouté sous le nom de mr/mme : zbayr kkkkh
+ + Tue Nov 15 14:32:06 2022 Une réservation a été supprimé sous la CIN : á
+ + Tue Nov 15 14:32:50 2022 Une réservation a été modifié sous le nom de mr/mme : rtyu fghjkl
+ + Tue Nov 15 14:34:12 2022 Une réservation a été supprimé sous la CIN : 
+ + Tue Nov 15 14:36:32 2022 Une réservation a été supprimé sous la CIN : 45677
+ - Tue Nov 15 15:39:43 2022 Une réservation a été supprimé sous la CIN : 45
+ ~ Tue Nov 15 15:40:11 2022 Une réservation a été modifié sous le nom de mr/mme :  
+ + Tue Nov 15 20:14:24 2022 Une réservation a été ajouté sous le nom de mr/mme : BATI5A LMBATA5

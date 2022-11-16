@@ -3,7 +3,10 @@
 #include<QString>
 #include<QSqlQuery>
 #include<QSqlQueryModel>
-
+#include <QPrinter>
+#include <QTextStream>
+#include <QTextDocument>
+#include <QDataStream>
 #include"QMessageBox"
 class reservation
 {
@@ -26,11 +29,17 @@ public:
     bool supprimer(int cin);
     QSqlQueryModel* afficher();
     bool modifier();
+    QSqlQueryModel* trierreservation();
+    QSqlQueryModel* recherche_reservation(QString search);
+    int statistiquesreservation(QString num_salle);
+
 
     private :
     int cin;
     QString nom,prenom,num_salle,type;
 };
+
+
 
 #endif // RESERVATION_H
 

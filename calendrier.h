@@ -1,6 +1,6 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-#include"reservation.h"
+#ifndef CALENDRIER_H
+#define CALENDRIER_H
+#include <QDate>
 #include <QMainWindow>
 #include <QMainWindow>
 #include <QApplication>
@@ -30,48 +30,37 @@
 #include <QNetworkReply>
 #include <QNetworkSession>
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
 
-class MainWindow : public QMainWindow
+//! [0]
+
+
+#include <QMainWindow>
+
+
+
+QT_BEGIN_NAMESPACE
+class QTextBrowser;
+QT_END_NAMESPACE
+
+class Calendrier : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+     Calendrier();
 
-private slots:
-
-    void on_b_ajouter_clicked();
-
-    void on_supprimer_clicked();
-
-    void on_b_modifier_clicked();
-
-    void on_pushButton_pdf_clicked();
-
-    void on_tri_nom_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_statistique_clicked();
-
-    void on_pushButton_3_clicked();
-
-
-    void on_calendarWidget_clicked(const QDate &date);
-
-    void on_pushButton_add_clicked();
-
-    void readfile();
-
-    void on_tabWidget_currentChanged(int index);
+public slots:
+    void setFontSize(int size);
+    void setMonth(int month);
+    void setYear(QDate date);
 
 private:
-    Ui::MainWindow *ui;
-    reservation r;
+    void insertCalendar();
+
+    int fontSize;
+    QDate selectedDate;
+    QTextBrowser *editor;
+
 
 QNetworkAccessManager *manager;
 
@@ -89,4 +78,5 @@ QNetworkAccessManager *manager;
     void updatetoken(QNetworkReply *reply);
 };
 
-#endif // MAINWINDOW_H
+
+#endif // CALENDRIER_H

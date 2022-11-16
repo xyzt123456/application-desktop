@@ -1,6 +1,9 @@
 #include "reservation.h"
 #include<QSqlQueryModel>
 #include<QObject>
+#include<QtDebug>
+
+
 reservation::reservation()
 {
 cin=0;
@@ -64,4 +67,33 @@ type="";
            query.bindValue(":num_salle", num_salle);
            query.bindValue(":type", type);
            return query.exec();
+ }
+
+ QSqlQueryModel* reservation:: trierreservation()
+ {
+
+     QSqlQueryModel * model=new QSqlQueryModel();
+
+     model->setQuery("select * from reservation order by nom ");
+
+return model;
+ }
+
+ QSqlQueryModel * reservation ::recherche_reservation(QString search)
+ {
+
+     QSqlQueryModel * model= new QSqlQueryModel();
+     QString qry="select * from reservation where cin like '%"+search+"%' or nom like '%"+search+"%' or prenom like '%"+search+"%' or num_salle like '%"+search+"%'or type like '%"+search+"%' ";
+     qDebug()<<qry;
+     model->setQuery(qry);
+     return model;
+ }
+int reservation::statistiquesreservation(QString num_salle)
+ {
+     QSqlQuery query;
+         query.prepare("select count(*) from reservation where num_salle=:num_salle ");
+         query.bindValue(":num_salle",num_salle);
+         query.exec();
+         query.next();
+         return query.value(0).toInt();
  }
