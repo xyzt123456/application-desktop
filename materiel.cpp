@@ -128,7 +128,7 @@ QSqlQueryModel * Materiel::recherche(QString rech)
 {
     QSqlQueryModel * model=new QSqlQueryModel;
 
-          model->setQuery("SELECT * FROM materiel WHERE matricule like '"+rech+"%' or libelle like '"+rech+"%'");
+          model->setQuery("SELECT * FROM materiel WHERE matricule like '"+rech+"%' or libelle like '"+rech+"%' or marque like'"+rech+"%'");
           //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
           model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
           model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
@@ -140,3 +140,66 @@ QSqlQueryModel * Materiel::recherche(QString rech)
     return model;
 }
 
+QSqlQueryModel * Materiel::tri_marque_desc()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY marque DESC ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+
+QSqlQueryModel * Materiel::tri_libelle_desc()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY libelle DESC ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+
+QSqlQueryModel * Materiel::tri_matricule_desc()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY matricule DESC ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}
+
+QSqlQueryModel * Materiel::tri_matricule()
+{
+    QSqlQueryModel * model=new QSqlQueryModel;
+
+          model->setQuery("SELECT * FROM materiel ORDER BY matricule ");
+          //pour nommer les colonnes par des noms de notre choix sinon il va afficher les noms des colonnes dans BD
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Libéllé"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Marque"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantité"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Etat"));
+
+    return model;
+}

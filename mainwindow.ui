@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1272</width>
-    <height>741</height>
+    <width>1304</width>
+    <height>723</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1271</width>
-      <height>701</height>
+      <width>1301</width>
+      <height>661</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -204,6 +204,7 @@ border: 2px solid #e0d0c1/*QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 
 
 QTextEdit:focus
 {
+	font: url(:/../../Sangrita.ttf);
     border: 2px solid #e0d0c1/*QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);*/
 }
 
@@ -502,26 +503,26 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <property name="title">
      <string>Gestion des matériaux</string>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pb_stat">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>440</y>
-       <width>93</width>
-       <height>28</height>
+       <x>970</x>
+       <y>280</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>imprimer</string>
+      <string>Statistiques</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="pdf">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>480</y>
-       <width>93</width>
-       <height>28</height>
+       <x>970</x>
+       <y>330</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -531,24 +532,24 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <string>PDF</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="pb_notification">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>560</y>
-       <width>93</width>
-       <height>28</height>
+       <x>970</x>
+       <y>430</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>SMS alerte</string>
+      <string>Notification</string>
      </property>
     </widget>
     <widget class="QPushButton" name="recherche">
      <property name="geometry">
       <rect>
        <x>840</x>
-       <y>140</y>
+       <y>150</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -560,8 +561,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <widget class="QLineEdit" name="le_rech">
      <property name="geometry">
       <rect>
-       <x>680</x>
-       <y>140</y>
+       <x>670</x>
+       <y>150</y>
        <width>151</width>
        <height>31</height>
       </rect>
@@ -584,6 +585,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -592,13 +596,13 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:26pt; font-weight:600; color:#601700;&quot;&gt;GESTION DES MATERIAUX&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="pb_map">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>520</y>
-       <width>93</width>
-       <height>28</height>
+       <x>970</x>
+       <y>380</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -608,10 +612,10 @@ p, li { white-space: pre-wrap; }
     <widget class="QTabWidget" name="tabWidget">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>170</x>
        <y>170</y>
-       <width>761</width>
-       <height>261</height>
+       <width>771</width>
+       <height>381</height>
       </rect>
      </property>
      <property name="currentIndex">
@@ -627,87 +631,130 @@ p, li { white-space: pre-wrap; }
          <x>10</x>
          <y>11</y>
          <width>741</width>
-         <height>181</height>
+         <height>291</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
       </widget>
-      <widget class="QComboBox" name="cb_tri">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>200</y>
-         <width>101</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <item>
-        <property name="text">
-         <string>Par Défaut</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Décroissant</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Croissant</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QComboBox" name="cb_type_tri">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>200</y>
-         <width>81</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <item>
-        <property name="text">
-         <string>Matricule</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Libéllé</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Marque</string>
-        </property>
-       </item>
-      </widget>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>200</y>
-         <width>101</width>
+         <y>320</y>
+         <width>61</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
-        <string>Trier dans l'ordre:</string>
+        <string>Trier par:</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>200</y>
-         <width>31</width>
+         <x>300</x>
+         <y>320</y>
+         <width>81</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
-        <string>Par:</string>
+        <string>Dans l'ordre:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_decr">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>320</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/down_arrow.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_cr">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>320</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/up_arrow.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_mat">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>320</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Matricule</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_lib">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>320</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Libéllé</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_marq">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>320</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Marque</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_refrech">
+       <property name="geometry">
+        <rect>
+         <x>722</x>
+         <y>320</y>
+         <width>31</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/refrech.png);</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>
@@ -719,7 +766,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>50</y>
+         <y>80</y>
          <width>91</width>
          <height>31</height>
         </rect>
@@ -729,7 +776,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>90</y>
+         <y>130</y>
          <width>91</width>
          <height>31</height>
         </rect>
@@ -739,7 +786,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>130</x>
-         <y>130</y>
+         <y>180</y>
          <width>91</width>
          <height>31</height>
         </rect>
@@ -749,7 +796,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>350</x>
-         <y>50</y>
+         <y>80</y>
          <width>91</width>
          <height>31</height>
         </rect>
@@ -759,21 +806,21 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>350</x>
-         <y>90</y>
+         <y>130</y>
          <width>91</width>
          <height>31</height>
         </rect>
        </property>
       </widget>
-      <widget class="QRadioButton" name="rb_ok">
+      <widget class="QRadioButton" name="rb_no">
        <property name="enabled">
         <bool>true</bool>
        </property>
        <property name="geometry">
         <rect>
-         <x>350</x>
-         <y>140</y>
-         <width>41</width>
+         <x>330</x>
+         <y>180</y>
+         <width>81</width>
          <height>20</height>
         </rect>
        </property>
@@ -781,27 +828,27 @@ p, li { white-space: pre-wrap; }
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>ok</string>
+        <string>en panne</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="rb_no">
+      <widget class="QRadioButton" name="rb_ok">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>140</y>
-         <width>41</width>
+         <x>410</x>
+         <y>180</y>
+         <width>91</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>no</string>
+        <string>fonctionne</string>
        </property>
       </widget>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>60</y>
+         <y>90</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -814,7 +861,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>100</y>
+         <y>140</y>
          <width>81</width>
          <height>20</height>
         </rect>
@@ -827,7 +874,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>140</y>
+         <y>190</y>
          <width>81</width>
          <height>20</height>
         </rect>
@@ -840,7 +887,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>60</y>
+         <y>90</y>
          <width>91</width>
          <height>20</height>
         </rect>
@@ -853,7 +900,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>100</y>
+         <y>130</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -866,7 +913,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>140</y>
+         <y>180</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -880,8 +927,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>0</x>
          <y>10</y>
-         <width>641</width>
-         <height>211</height>
+         <width>751</width>
+         <height>321</height>
         </rect>
        </property>
        <property name="title">
@@ -891,7 +938,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>510</x>
-          <y>60</y>
+          <y>90</y>
           <width>51</width>
           <height>28</height>
          </rect>
@@ -904,7 +951,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>510</x>
-          <y>110</y>
+          <y>130</y>
           <width>61</width>
           <height>28</height>
          </rect>
@@ -920,8 +967,8 @@ p, li { white-space: pre-wrap; }
       <zorder>le_marq</zorder>
       <zorder>le_qte</zorder>
       <zorder>le_prix</zorder>
-      <zorder>rb_ok</zorder>
       <zorder>rb_no</zorder>
+      <zorder>rb_ok</zorder>
       <zorder>label</zorder>
       <zorder>label_2</zorder>
       <zorder>label_3</zorder>
@@ -937,7 +984,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>290</x>
-         <y>80</y>
+         <y>140</y>
          <width>71</width>
          <height>28</height>
         </rect>
@@ -950,7 +997,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>90</y>
+         <y>150</y>
          <width>101</width>
          <height>16</height>
         </rect>
@@ -963,7 +1010,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>80</y>
+         <y>140</y>
          <width>113</width>
          <height>31</height>
         </rect>
@@ -974,8 +1021,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>20</x>
          <y>10</y>
-         <width>621</width>
-         <height>181</height>
+         <width>721</width>
+         <height>321</height>
         </rect>
        </property>
        <property name="title">
@@ -987,6 +1034,30 @@ p, li { white-space: pre-wrap; }
       <zorder>label_7</zorder>
       <zorder>le_mat_supp</zorder>
      </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Map</string>
+      </attribute>
+      <widget class="WebAxWidget" name="WebBrowser">
+       <property name="control" stdset="0">
+        <string>{8856F961-340A-11D0-A96B-00C04FD705A2}</string>
+       </property>
+       <property name="focusPolicy" stdset="0">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="Height" stdset="0">
+        <number>30</number>
+       </property>
+       <property name="geometry" stdset="0">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>771</width>
+         <height>351</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -995,13 +1066,25 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1272</width>
+     <width>1304</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QAxWidget</class>
+   <extends>QWidget</extends>
+   <header>qaxwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>WebAxWidget</class>
+   <extends>QAxWidget</extends>
+   <header>webaxwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -39,6 +39,10 @@ public:
     QSqlQueryModel * tri_libelle();
     QSqlQueryModel * tri_marque();
     QSqlQueryModel * recherche(QString);
+    QSqlQueryModel * tri_libelle_desc();
+    QSqlQueryModel * tri_marque_desc();
+    QSqlQueryModel * tri_matricule_desc();
+    QSqlQueryModel * tri_matricule();
 };
 
 #endif // MATERIEL_H
