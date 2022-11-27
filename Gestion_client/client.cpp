@@ -4,11 +4,24 @@
 #include  <QString>
 #include <QtDebug>
 #include <QObject>
-
+/*#include<QtCharts/QPieSeries>
+#include<QtCharts/QBarSeries>
+#include<QtCharts/QBarSet>
+#include<QtCharts/QLegend>
+#include<QtCharts/QBarCategoryAxis>
+#include<QtCharts/QLineSeries>
+#include<QtCharts/QCategoryAxis>
+#include<QtCharts/QPieSlice>
+#include<QtCharts/QChart>
+#include<QtCharts/QChartView>
+#include<QtCharts/QPieSlice>
+#include <Charts>
+*/
 Client::Client()
 {
   cin=0;
   tel=0;
+  nbr=0;
   nom="";
   prenom="";
   adresse="";
@@ -16,7 +29,7 @@ Client::Client()
   type="";
 }
 
-Client::Client(int cin,int tel,QString nom,QString prenom,QString adresse,QString date_naisc,QString type)
+Client::Client(int cin,int tel,int nbr,QString nom,QString prenom,QString adresse,QString date_naisc,QString type)
 { this->cin=cin;
   this->tel=tel;
   this->nom=nom;
@@ -24,18 +37,21 @@ Client::Client(int cin,int tel,QString nom,QString prenom,QString adresse,QStrin
   this->adresse=adresse;
   this->date_naisc=date_naisc;
   this->type=type;
+  this->nbr=nbr;
 
 }
     int Client::getCin(){return cin;}
     int Client::getTel(){return tel;}
+    int Client::getNbr(){return nbr;}
     QString Client::getNom(){return nom;}
     QString Client::getPrenom(){return prenom;}
     QString Client::getAdresse(){return adresse;}
     QString Client::getDate_naisc(){return date_naisc;}
     QString Client::getType(){return type;}
 
-    void Client:: setCin(int cin){this->cin=cin;}
+    void Client::setCin(int cin){this->cin=cin;}
     void Client::setTel(int tel){this->tel=tel;}
+    void Client::setNbr(int  nbr){this->nbr=nbr;}
     void Client::setNom (QString nom){this->nom=nom;}
     void Client::setPrenom(QString prenom){this->prenom=prenom;}
     void Client::setAdresse(QString adresse){this->adresse=adresse;}
@@ -47,15 +63,17 @@ Client::Client(int cin,int tel,QString nom,QString prenom,QString adresse,QStrin
         QSqlQuery query;
         QString cin_string=QString::number(cin);
         QString tel_string=QString::number(tel);
-        query.prepare("INSERT INTO client (cin, nom,prenom,date_de_naissance,telephone,adresse) "
-                      "VALUES (:cin, :nom, :prenom,:date_de_naissance,:telephone,:type,:adresse)");
+        QString nbr_string=QString::number(nbr);
+        query.prepare("INSERT INTO client (CIN, NOM,PRENOM,DATE_DE_NAISSANCE,TELEPHONE,TYPE,NBR,ADRESSE) "
+                      "VALUES (:cin, :nom, :prenom,:date_de_naissance,:tel,:type,:nbr,:adresse)");
         query.bindValue(":cin", cin_string);
-        query.bindValue(":nom", tel_string);
-        query.bindValue(":prenom", nom);
-        query.bindValue(":date_de_naissance", prenom);
-        query.bindValue(":telephone", date_naisc);
-        query.bindValue(":adresse", type);
-        query.bindValue(":type",adresse);
+        query.bindValue(":nom", nom);
+        query.bindValue(":prenom", prenom);
+        query.bindValue(":date_de_naissance", date_naisc);
+        query.bindValue(":tel", tel_string);
+        query.bindValue(":type", type);
+        query.bindValue(":nbr",nbr_string);
+        query.bindValue(":adresse",adresse);
 
         return query.exec();
 
@@ -72,7 +90,8 @@ QSqlQueryModel* Client::afficher()
                model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_naisc"));
                model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
                model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
-               model->setHeaderData(6, Qt::Horizontal, QObject::tr("adresse"));
+               model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
+               model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
 
 
                return model;
@@ -91,7 +110,7 @@ bool Client::modifier()
     QSqlQuery query;
     QString cin_string=QString::number(cin);
     QString tel_string=QString::number(tel);
-    query.prepare("update client set nom='"+nom+"',prenom='"+prenom+"',date_naisc='"+date_naisc+"',='"+type+"',adresse='"+adresse+"',tel='"+tel_string+"'where cin='"+cin_string+"'");
+    //query.prepare("update client set NOM='"+nom+"',PRENOM='"+prenom+"',DATE_DE_NAISSANCE='"+date_naisc+"',TYPE='"+type+"',ADRESSE='"+adresse+"',TEL='"+tel_string+"'NBR='"+nbr_string+"'where CIN='"+cin_string+"'");
 
     return query.exec();
 
@@ -100,7 +119,7 @@ bool Client::modifier()
 QSqlQueryModel *Client::recherche_client(QString recherche)
 
 { QSqlQueryModel * model=new QSqlQueryModel;
-    model->setQuery("SELECT * FROM client WHERE cin like '"+recherche+"%' or nom like '"+recherche+"%' or prenom like '"+recherche+"%' or date_naisc like '"+recherche+"%' or tel like '"+recherche+"%' or type like '"+recherche+"%' or adresse like '"+recherche+"%'");
+    model->setQuery("SELECT * FROM client WHERE CIN like '"+recherche+"%' or NOM like '"+recherche+"%' or PRENOM like '"+recherche+"%' or DATE_DE_NAISSANCE like '"+recherche+"%' or TELEPHONE like '"+recherche+"%' or TYPE like '"+recherche+"%' or ADRESSE like '"+recherche+"%'");
 
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
@@ -108,7 +127,8 @@ QSqlQueryModel *Client::recherche_client(QString recherche)
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_naisc"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
-    model->setHeaderData(6, Qt::Horizontal, QObject::tr("adresse"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
 
 
     return model;
@@ -126,8 +146,42 @@ QSqlQueryModel * Client::tri_nom()
           model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_de_naissance"));
           model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
           model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
-          model->setHeaderData(6, Qt::Horizontal, QObject::tr("adresse"));
+          model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
+          model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
 
     return model;
+}
+
+
+void Client::statistique(QVector<double> *ticks, QVector<QString> *labels)
+{
+    QSqlQuery q;
+    int i=0;
+    q.exec("select nom from client");
+    while (q.next())
+    {
+        QString cin = q.value(0).toString();
+        i++;
+        *ticks<<i;
+        *labels <<cin;
+    }
+}
+
+QSqlQueryModel *Client::client_fidele()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+               model->setQuery("SELECT * FROM client");
+               model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
+               model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+               model->setHeaderData(2, Qt::Horizontal, QObject:: tr("prenom"));
+               model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_naisc"));
+               model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
+               model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
+               model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
+               model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
+
+
+               return model;
 }
 

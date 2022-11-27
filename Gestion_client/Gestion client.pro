@@ -5,6 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       +=network
+QT       +=serialport
+
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -26,15 +29,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     client.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    smtp.cpp
 
 HEADERS += \
+    arduino.h \
     client.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    smtp.h
 
 FORMS += \
         mainwindow.ui
