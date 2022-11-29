@@ -22,41 +22,49 @@ Client::Client()
   cin=0;
   tel=0;
   nbr=0;
+  code=0;
   nom="";
   prenom="";
   adresse="";
   date_naisc="";
   type="";
+  date_de_res="";
 }
 
-Client::Client(int cin,int tel,int nbr,QString nom,QString prenom,QString adresse,QString date_naisc,QString type)
+Client::Client(int cin,int tel,int nbr,int code,QString nom,QString prenom,QString adresse,QString date_naisc,QString type,QString date_de_res)
 { this->cin=cin;
   this->tel=tel;
+  this->code=code;
   this->nom=nom;
   this->prenom=prenom;
   this->adresse=adresse;
   this->date_naisc=date_naisc;
   this->type=type;
   this->nbr=nbr;
+  this->date_de_res=date_de_res;
 
 }
     int Client::getCin(){return cin;}
     int Client::getTel(){return tel;}
     int Client::getNbr(){return nbr;}
+    int Client::getCode(){return code;}
     QString Client::getNom(){return nom;}
     QString Client::getPrenom(){return prenom;}
     QString Client::getAdresse(){return adresse;}
     QString Client::getDate_naisc(){return date_naisc;}
     QString Client::getType(){return type;}
+    QString Client::getDate_de_res(){return date_de_res;}
 
     void Client::setCin(int cin){this->cin=cin;}
     void Client::setTel(int tel){this->tel=tel;}
     void Client::setNbr(int  nbr){this->nbr=nbr;}
+    void Client::setCode(int code){this->code=code;}
     void Client::setNom (QString nom){this->nom=nom;}
     void Client::setPrenom(QString prenom){this->prenom=prenom;}
     void Client::setAdresse(QString adresse){this->adresse=adresse;}
     void Client::setDate_naisc(QString date_naisc){this->date_naisc=date_naisc;}
     void Client::setType(QString type){this->type=type;}
+    void Client::setDate_de_res(QString date_de_res){this->date_de_res=date_de_res;}
 
     bool Client::ajouter()
     {
@@ -64,8 +72,10 @@ Client::Client(int cin,int tel,int nbr,QString nom,QString prenom,QString adress
         QString cin_string=QString::number(cin);
         QString tel_string=QString::number(tel);
         QString nbr_string=QString::number(nbr);
-        query.prepare("INSERT INTO client (CIN, NOM,PRENOM,DATE_DE_NAISSANCE,TELEPHONE,TYPE,NBR,ADRESSE) "
-                      "VALUES (:cin, :nom, :prenom,:date_de_naissance,:tel,:type,:nbr,:adresse)");
+        QString code_string=QString::number(code);
+
+        query.prepare("INSERT INTO client (CIN, NOM,PRENOM,DATE_DE_NAISSANCE,TELEPHONE,TYPE,NBR,ADRESSE,DATE_DE_RES,CODE) "
+                      "VALUES (:cin, :nom, :prenom,:date_de_naissance,:tel,:type,:nbr,:adresse,:date_de_res,:code)");
         query.bindValue(":cin", cin_string);
         query.bindValue(":nom", nom);
         query.bindValue(":prenom", prenom);
@@ -74,6 +84,8 @@ Client::Client(int cin,int tel,int nbr,QString nom,QString prenom,QString adress
         query.bindValue(":type", type);
         query.bindValue(":nbr",nbr_string);
         query.bindValue(":adresse",adresse);
+        query.bindValue(":date_de_res",date_de_res);
+        query.bindValue(":code",code);
 
         return query.exec();
 
@@ -92,6 +104,9 @@ QSqlQueryModel* Client::afficher()
                model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
                model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
                model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
+               model->setHeaderData(8, Qt::Horizontal, QObject::tr("date_de_res"));
+               model->setHeaderData(9,Qt::Horizontal,  QObject::tr("code"));
+
 
 
                return model;
@@ -110,6 +125,7 @@ bool Client::modifier()
     QSqlQuery query;
     QString cin_string=QString::number(cin);
     QString tel_string=QString::number(tel);
+    QString code_string=QString::number(code);
     //query.prepare("update client set NOM='"+nom+"',PRENOM='"+prenom+"',DATE_DE_NAISSANCE='"+date_naisc+"',TYPE='"+type+"',ADRESSE='"+adresse+"',TEL='"+tel_string+"'NBR='"+nbr_string+"'where CIN='"+cin_string+"'");
 
     return query.exec();
@@ -129,6 +145,8 @@ QSqlQueryModel *Client::recherche_client(QString recherche)
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
     model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
     model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("date_de_res"));
+    model->setHeaderData(9,Qt::Horizontal,  QObject::tr("code"));
 
 
     return model;
@@ -148,12 +166,14 @@ QSqlQueryModel * Client::tri_nom()
           model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
           model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
           model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
+          model->setHeaderData(8, Qt::Horizontal, QObject::tr("date_de_res"));
+          model->setHeaderData(9,Qt::Horizontal,  QObject::tr("code"));
 
     return model;
 }
 
 
-void Client::statistique(QVector<double> *ticks, QVector<QString> *labels)
+/*void Client::statistique(QVector<double> *ticks, QVector<QString> *labels)
 {
     QSqlQuery q;
     int i=0;
@@ -165,13 +185,13 @@ void Client::statistique(QVector<double> *ticks, QVector<QString> *labels)
         *ticks<<i;
         *labels <<cin;
     }
-}
+}*/
 
 QSqlQueryModel *Client::client_fidele()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
 
-               model->setQuery("SELECT * FROM client");
+               model->setQuery("SELECT * FROM client where nbr>=5");
                model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
                model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
                model->setHeaderData(2, Qt::Horizontal, QObject:: tr("prenom"));
@@ -180,6 +200,8 @@ QSqlQueryModel *Client::client_fidele()
                model->setHeaderData(5, Qt::Horizontal, QObject::tr("type"));
                model->setHeaderData(6, Qt::Horizontal, QObject::tr("nbr"));
                model->setHeaderData(7, Qt::Horizontal, QObject::tr("adresse"));
+               model->setHeaderData(8, Qt::Horizontal, QObject::tr("date_de_res"));
+               model->setHeaderData(9,Qt::Horizontal,  QObject::tr("code"));
 
 
                return model;

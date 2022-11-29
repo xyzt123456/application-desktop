@@ -24,7 +24,7 @@ class Client
 {
 public:
     Client();
-    Client(int,int,int,QString,QString,QString,QString,QString);
+    Client(int,int,int,int,QString,QString,QString,QString,QString,QString);
 
     //CRUD
     bool ajouter();
@@ -44,11 +44,13 @@ public:
     int getCin();
     int getTel();
     int getNbr();
+    int getCode();
     QString getNom();
     QString getPrenom();
     QString getDate_naisc();
     QString getType();
     QString getAdresse();
+    QString getDate_de_res();
 
 
 
@@ -56,16 +58,17 @@ public:
     void setCin(int);
     void setTel(int);
     void setNbr(int);
+    void setCode(int);
     void setNom (QString);
     void setPrenom(QString);
     void setDate_naisc(QString);
     void setType(QString);
     void setAdresse(QString);
-
+    void setDate_de_res(QString);
 
  private :
-    int cin,tel,nbr;
-    QString nom,prenom,date_naisc,type,adresse;
+    int cin,tel,nbr,code;
+    QString nom,prenom,date_naisc,type,adresse,date_de_res;
 };
 
 #endif // CLIENT_H

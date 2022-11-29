@@ -31,12 +31,14 @@ void MainWindow::on_b_ajouter_clicked()
 {
     int cin=ui->le_cin->text().toInt();
     int tel=ui->le_tel->text().toInt();
+    int nbr=ui->le_nbr->text().toInt();
+    int code=ui->le_code->text().toInt();
     QString nom=ui->le_nom->text();
     QString prenom=ui->le_prenom->text();
-    QString adresse=ui->le_adresse->text();
+    QString adresse=ui->la_adresse->text();
     QString date_naisc=ui->la_date->text();
+    QString date_de_res=ui->date_res->text();
     QString type=ui->type->text();
-
 
     if (ui->rb1->isChecked())
     {type="etudiant";}
@@ -46,7 +48,7 @@ void MainWindow::on_b_ajouter_clicked()
 
 
 
-Client c(cin,tel,nom,prenom,date_naisc,type,nbr,adresse);
+Client c(cin,tel,nbr,code,nom,prenom,date_naisc,type,adresse,date_de_res);
 
     bool test=c.ajouter();
 
@@ -69,13 +71,22 @@ void MainWindow::on_b_modifier_clicked()
 {
     int cin=ui->le_cin_3->text().toInt();
     int tel=ui->le_tel_2->text().toInt();
+    int nbr=ui->le_nbr2->text().toInt();
+    int code=ui->le_code2->text().toInt();
     QString nom=ui->le_nom_2->text();
     QString prenom=ui->le_prenom_2->text();
-    QString adresse=ui->le_adresse_2->text();
-    QString date_naisc=ui->dateEdit->text();
+    QString adresse=ui->la_adresse_2->text();
+    QString date_naisc=ui->la_date2->text();
+    QString date_de_res=ui->date_res2->text();
     QString type=ui->type->text();
 
-    Client c(cin,tel,nom,prenom,date_naisc,type,nbr,adresse);
+    if (ui->rb1->isChecked())
+    {type="etudiant";}
+
+    if (ui->rb2->isChecked())
+    {type="fonctionnaire";}
+
+    Client c(cin,tel,nbr,code,nom,prenom,date_naisc,type,adresse,date_de_res);
 
 
     bool test=c.modifier();
@@ -91,10 +102,10 @@ void MainWindow::on_b_modifier_clicked()
                 QMessageBox::critical(nullptr, QObject::tr("not ok"),
                             QObject::tr("modification non effectue.\n"
                                         "Click Cancel to exit."), QMessageBox::Cancel);
-            if (ui->rb1_3->isChecked())
+            if (ui->rb1_2->isChecked())
             {type="etudiant";}
 
-            if (ui->rb2_3->isChecked())
+            if (ui->rb2_2->isChecked())
             {type="fonctionnaire";}
 }
 
@@ -107,12 +118,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->le_cin->setValidator (new QIntValidator(100, 9999999, this));
     ui->tab_client->setModel(c.afficher());
-   /* connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
+
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
+
+   /*connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
     connect(ui->exitBtn, SIGNAL(clicked()),this, SLOT(close()));
     connect(ui->browseBtn, SIGNAL(clicked()), this, SLOT(browse()));
 
     ui->paswd->setEchoMode(QLineEdit::Password);
-    */
+*/
 }
 
 void MainWindow::on_b_supprimer_clicked()
@@ -289,17 +312,45 @@ void MainWindow::on_fd_clicked()
 {
     ui->tab_client->setModel(c.client_fidele());
 
-    if (c.nbr>5)
-    {
+    if (c.getNbr()>=5)
         {
             QMessageBox::information(nullptr, QObject::tr("ok"),
                         QObject::tr("Le client a une visite gratuite et une place dans le parking.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
+            ui->tab_client->setModel(c.client_fidele());
 
     }
         else
-            QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                        QObject::tr("Ce client est nouveau.\n"
-                                    "Click Cancel to exit."), QMessageBox::Cancel);
+        {
+        QMessageBox::critical(nullptr, QObject::tr("ok"),
+                    QObject::tr("Le client a une visite gratuite et une place dans le parking.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
     }
+
+}
+
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+        QMessageBox msgBox;
+        QString ch=QString(data);
+
+        QSqlQueryModel * model2= new QSqlQueryModel();
+            model2->setQuery("select * from client where code='"+ch+"'");
+            int z=model2->rowCount();
+
+            if(data=="1")
+            {
+
+                msgBox.setText("Accès au parking avec succès.");
+                A.write_to_arduino("1");
+            }
+            else if (data=="0")
+            {
+                msgBox.setText("Accès au parking impossible.");
+                A.write_to_arduino("0");
+            }
+
+    msgBox.exec();
+
 }
