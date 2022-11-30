@@ -45,7 +45,7 @@ private slots:
 
     void on_pb_refrech_clicked();
 
-    void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
+    void update();   // slot permettant la mise à jour du label état de la lampe 1,
     // ce slot est lancé à chaque réception d'un message de Arduino
 
 private:

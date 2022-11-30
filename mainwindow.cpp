@@ -30,6 +30,7 @@
 #include<QDateTime>
 #include"popup.h"
 #include"popupp.h"
+#include"arduino.h"
 using namespace QtCharts;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -72,8 +73,6 @@ MainWindow::MainWindow(QWidget *parent)
                             "   dans les équipement\n");
 
     }
-
-
 popUp->show();
 
 popUpp = new PopUpp();
@@ -93,7 +92,6 @@ if(y!=0)
     ch=ch+"\nont un stock plein";
     popUpp->setPopupText(ch);
     popUpp->show();
-
  }
 else
  {
@@ -101,28 +99,21 @@ else
                             "   aucune   \n"
                             "    panne   \n"
                         "   dans les équipement\n");
-
 }
-
-
 popUpp->show();
 
 
 int ret=A.connect_arduino(); // lancer la connexion à arduino
-switch(ret){
+switch(ret)
+{
 case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
     break;
 case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
    break;
 case(-1):qDebug() << "arduino is not available";
 }
- QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+ QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update())); // permet de lancer
  //le slot update_label suite à la reception du signal readyRead (reception des données).
-
-
-
-
-
 
 }
 
@@ -130,22 +121,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-void MainWindow::update_label()
-{
-    data=A.read_from_arduino();
-
-    if(data=="1")
-
-        ui->label_3->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1
-    // alors afficher ON
-
-    else if (data=="0")
-
-        ui->label_3->setText("OFF");   // si les données reçues de arduino via la liaison série sont égales à 0
-     //alors afficher ON
-}
-
 
 
 void MainWindow::on_pb_ajouter_clicked()
@@ -541,6 +516,7 @@ void MainWindow::on_pb_cr_clicked()
         ui->tab_materiel->setModel(m.tri_libelle());
     if(ui->rb_marq->isChecked())
         ui->tab_materiel->setModel(m.tri_marque());
+
 }
 
 void MainWindow::on_pb_notification_clicked()
@@ -619,4 +595,31 @@ popUpp->show();
 void MainWindow::on_pb_refrech_clicked()
 {
     ui->tab_materiel->setModel(m.afficher());
+}
+
+
+void MainWindow::update()
+{
+    data=A.read_from_arduino();
+    QMessageBox msgBox;
+    QString ch=QString(data);
+
+    QSqlQueryModel * model2= new QSqlQueryModel();
+        model2->setQuery("select * from materiel where etat='"+ch+"'");
+        int z=model2->rowCount();
+
+        if(z>0)
+        {
+
+            msgBox.setText("Accès au parking avec succès.");
+            A.write_to_arduino("1");
+        }
+        else if (z==0)
+        {
+            msgBox.setText("Accès au parking impossible.");
+            A.write_to_arduino("0");
+        }
+
+msgBox.exec();
+
 }
