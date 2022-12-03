@@ -27,6 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
     employes.cpp \
+    integration.cpp \
     login.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -38,6 +39,7 @@ SOURCES += \
 
 HEADERS += \
     employes.h \
+    integration.h \
     login.h \
         mainwindow.h \
     connection.h \
@@ -46,6 +48,7 @@ HEADERS += \
     qrwidget.h
 
 FORMS += \
+        integration.ui \
         login.ui \
         mainwindow.ui
 
@@ -54,5 +57,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    ressource.qrc
+RESOURCES +=
