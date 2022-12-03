@@ -22,8 +22,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     arduino.cpp \
     connection.cpp \
+    ig_materiel.cpp \
     main.cpp \
-    mainwindow.cpp \
     materiel.cpp \
     popup.cpp \
     popupp.cpp
@@ -31,14 +31,14 @@ SOURCES += \
 HEADERS += \
     arduino.h \
     connection.h \
-    mainwindow.h \
+    ig_materiel.h \
     materiel.h \
     popup.h \
     popupp.h \
     webaxwidget.h
 
 FORMS += \
-    mainwindow.ui
+    ig_materiel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

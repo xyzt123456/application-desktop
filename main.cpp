@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "ig_materiel.h"
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
@@ -16,11 +16,7 @@ int main(int argc, char *argv[])
 
     Connection c;
     bool test=c.createconnect();
-    MainWindow w;
-    //w.resize(1500,1000);
-    QFile res(":/../../Sangrita.ttf");
-    QFont f;
-    f.setFamily("Sangrita");
+    Ig_Materiel w;
     w.setWindowTitle("SQUADDESK");
     if(test)
     {w.show();
