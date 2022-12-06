@@ -16,8 +16,25 @@
 #include <QDataStream>
 #include<QDesktopServices>
 #include<QFontDatabase>
+#include<QPlainTextEdit>
 
+/*
+#include<QCharts>
+#include<QtCharts/QPieSeries>
+#include<QtCharts/QBarSeries>
+#include<QtCharts/QBarSet>
+#include<QtCharts/QLegend>
+#include<QtCharts/QBarCategoryAxis>
+#include<QtCharts/QLineSeries>
+#include<QtCharts/QCategoryAxis>
+#include<QtCharts/QPieSlice>
+#include<QtCharts/QChart>
+#include<QtCharts/QChartView>
+#include<QtCharts/QPieSlice>
 
+using namespace QtCharts;
+
+*/
 
 MainWindow::~MainWindow()
 {
@@ -35,10 +52,11 @@ void MainWindow::on_b_ajouter_clicked()
     int code=ui->le_code->text().toInt();
     QString nom=ui->le_nom->text();
     QString prenom=ui->le_prenom->text();
-    QString adresse=ui->la_adresse->text();
     QString date_naisc=ui->la_date->text();
-    QString date_de_res=ui->date_res->text();
     QString type=ui->type->text();
+    QString adresse=ui->la_adresse->text();
+    QString date_de_res=ui->date_res->text();
+
 
     if (ui->rb1->isChecked())
     {type="etudiant";}
@@ -47,8 +65,7 @@ void MainWindow::on_b_ajouter_clicked()
     {type="fonctionnaire";}
 
 
-
-Client c(cin,tel,nbr,code,nom,prenom,date_naisc,type,adresse,date_de_res);
+Client c(cin,nom,prenom,date_naisc,tel,type,nbr,adresse,date_de_res,code);
 
     bool test=c.ajouter();
 
@@ -62,9 +79,9 @@ Client c(cin,tel,nbr,code,nom,prenom,date_naisc,type,adresse,date_de_res);
 
 }
     else
-        QMessageBox::critical(nullptr, QObject::tr("not ok"),
+    {QMessageBox::critical(nullptr, QObject::tr("not ok"),
                     QObject::tr("ajout non effectue.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
+                                "Click Cancel to exit."), QMessageBox::Cancel);}
 }
 
 void MainWindow::on_b_modifier_clicked()
@@ -86,8 +103,7 @@ void MainWindow::on_b_modifier_clicked()
     if (ui->rb2->isChecked())
     {type="fonctionnaire";}
 
-    Client c(cin,tel,nbr,code,nom,prenom,date_naisc,type,adresse,date_de_res);
-
+    Client c(cin,nom,prenom,date_naisc,tel,type,nbr,adresse,date_de_res,code);
 
     bool test=c.modifier();
             if (test)
@@ -96,6 +112,7 @@ void MainWindow::on_b_modifier_clicked()
                 QMessageBox::information(nullptr, QObject::tr("ok"),
                             QObject::tr("modification  effectue.\n"
                                         "Click Cancel to exit."), QMessageBox::Cancel);
+                ui->tab_client->setModel(c.afficher());
 
         }
             else
@@ -116,8 +133,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->le_cin->setValidator (new QIntValidator(100, 9999999, this));
+    ui->le_cin->setValidator (new QIntValidator(100, 99999999, this));
+    ui->le_tel->setValidator (new QIntValidator(100, 99999999, this));
+
     ui->tab_client->setModel(c.afficher());
+
+
+
 
     int ret=A.connect_arduino(); // lancer la connexion à arduino
     switch(ret){
@@ -130,12 +152,9 @@ MainWindow::MainWindow(QWidget *parent) :
      QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
      //le slot update_label suite à la reception du signal readyRead (reception des données).
 
-   /*connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
-    connect(ui->exitBtn, SIGNAL(clicked()),this, SLOT(close()));
+    connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
     connect(ui->browseBtn, SIGNAL(clicked()), this, SLOT(browse()));
 
-    ui->paswd->setEchoMode(QLineEdit::Password);
-*/
 }
 
 void MainWindow::on_b_supprimer_clicked()
@@ -236,36 +255,80 @@ void MainWindow::on_pdf_clicked()
 
 
 
-void MainWindow::on_envoyer_clicked()
-{
-    Smtp* smtp = new Smtp("squad.desk2002@gmail.com", "coworkingspace02", "smtp.gmail.com", 465);
-        connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-        QString a=ui->mail->text();
-        QString b=ui->sujet->text();
-        QString c=ui->msg->toPlainText();
 
-        smtp->sendMail("squad.desk2002@gmail.com", a , b,c);
+void MainWindow::on_fd_clicked()
+{
+    ui->tab_client->setModel(c.client_fidele());
+
+    if (c.getNbr()>=5)
+        {
+            QMessageBox::information(nullptr, QObject::tr("Client fidèle"),
+                        QObject::tr("Voilà les client qui ont une visite gratuite et une place dans le parking.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+            ui->tab_client->setModel(c.client_fidele());
+
+    }
+        else
+        {
+        QMessageBox::critical(nullptr, QObject::tr("Client fidèle"),
+                    QObject::tr("Voilà les client qui ont une visite gratuite et une place dans le parking.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+
+}
+
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+        QMessageBox msgBox;
+        QString ch=QString(data);
+
+        QSqlQuery query;
+        query.prepare("select * from client where code='"+ch+"'");
+
+        QSqlQueryModel * model2= new QSqlQueryModel();
+            model2->setQuery("select * from client where code='"+ch+"'");
+            int z=0;
+                    z=model2->rowCount();
+
+         if(query.exec() and z>0)
+         {
+             msgBox.setText("Accès au parking avec succès.");
+             A.write_to_arduino("1");
+         }
+         else if (z==0)
+         {
+             msgBox.setText("Accès au parking impossible.");
+             A.write_to_arduino("0");
+         }
+
+
+
+           /* else if (data=="0")
+            {
+                msgBox.setText("Accès au parking impossible.");
+                A.write_to_arduino("0");
+                z=0;
+            }*/
+
+    msgBox.exec();
+
 }
 
 
-
-/*void MainWindow::on_stat_2_clicked()
+/*
+void MainWindow::on_stat_clicked()
 {
-    QBarSet *set"etudiant"=new QBarSet("Etudiant");
-        QBarSet *set"fonctionnaire"=new QBarSet("Fonctionnaire");
+    QBarSet *set0=new QBarSet("Fonctionnaire");
+        QBarSet *set1=new QBarSet("Etudiant");
 
         QSqlQueryModel * model= new QSqlQueryModel();
-            model->setQuery("select * from client where type=etudiant");
-            QString type"etudiant"=model->rowCount();
-            model->setQuery("select * from client where type=fonctionnaire");
-            QString type=model->rowCount();
-            //int total=etat0+etat1;
-           // etat0=(etat0*100)/total;
-            //etat1=(etat1*100)/total;
+            model->setQuery("select * from client where type=fonctionnaire ");
+            int etat0=model->rowCount();
+            model->setQuery("select * from materiel where type=etudiant");
+            int etat1=model->rowCount();
 
-
-
-        *set"etudiant<<etat0;
+        *set0<<etat0;
         *set1<<etat1;
 
         QBarSeries *series= new QBarSeries();
@@ -279,11 +342,11 @@ void MainWindow::on_envoyer_clicked()
         QFont font;
         font.setPixelSize(18);
         chart->setTitleFont(font);
-        chart->setTitle("Pourcentage de type des clients");
+        chart->setTitle("Les types des clients");
         chart->setAnimationOptions(QChart::AllAnimations);
 
         QStringList cat_etats;
-        cat_type<<"Etudiant"<<"Fonctionnaire";
+        cat_etats<<"Fonctionnaire"<<"Etudiant";
 
         QBarCategoryAxis *axis= new QBarCategoryAxis();
         //axis->append(cat_etats);
@@ -306,51 +369,35 @@ void MainWindow::on_envoyer_clicked()
 
 
 
-
-
-void MainWindow::on_fd_clicked()
+void MainWindow::on_sendBtn_clicked()
 {
-    ui->tab_client->setModel(c.client_fidele());
+    Smtp* smtp = new Smtp("elaa.soua@esprit.tn","53621299","smtp.gmail.com",465);
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
-    if (c.getNbr()>=5)
-        {
-            QMessageBox::information(nullptr, QObject::tr("ok"),
-                        QObject::tr("Le client a une visite gratuite et une place dans le parking.\n"
-                                    "Click Cancel to exit."), QMessageBox::Cancel);
-            ui->tab_client->setModel(c.client_fidele());
+  if( !files.isEmpty() )
+        smtp->sendMail("squad.desk2002@gmail.com", ui->rcpt->text(), ui->subject->text(), ui->msg->toPlainText());
+    else
+        smtp->sendMail("squad.desk2002@gmail.com", ui->rcpt->text(), ui->subject->text(), ui->msg->toPlainText());
 
-    }
-        else
-        {
-        QMessageBox::critical(nullptr, QObject::tr("ok"),
-                    QObject::tr("Le client a une visite gratuite et une place dans le parking.\n"
-                               "Click Cancel to exit."), QMessageBox::Cancel);
-    }
+   ui->rcpt->setText("");
+   ui->subject->setText("");
+   ui->msg->setPlainText("");
 
 }
-
-void MainWindow::update_label()
+void MainWindow::on_browseBtn_clicked()
 {
-    data=A.read_from_arduino();
-        QMessageBox msgBox;
-        QString ch=QString(data);
+    files.clear();
 
-        QSqlQueryModel * model2= new QSqlQueryModel();
-            model2->setQuery("select * from client where code='"+ch+"'");
-            int z=model2->rowCount();
+    QFileDialog dialog(this);
+    dialog.setDirectory(QDir::homePath());
+    dialog.setFileMode(QFileDialog::ExistingFiles);
 
-            if(data=="1")
-            {
+    if (dialog.exec())
+        files = dialog.selectedFiles();
 
-                msgBox.setText("Accès au parking avec succès.");
-                A.write_to_arduino("1");
-            }
-            else if (data=="0")
-            {
-                msgBox.setText("Accès au parking impossible.");
-                A.write_to_arduino("0");
-            }
+    QString fileListString;
+    foreach(QString file, files)
+        fileListString.append( "\"" + QFileInfo(file).fileName() + "\" " );
 
-    msgBox.exec();
-
+    ui->file->setText( fileListString );
 }

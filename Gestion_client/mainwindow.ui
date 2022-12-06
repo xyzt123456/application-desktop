@@ -486,7 +486,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="stat">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -971,7 +971,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -990,7 +990,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="title">
-       <string>Ajouter</string>
+       <string>Ajouter un client</string>
       </property>
       <widget class="QSpinBox" name="le_nbr">
        <property name="geometry">
@@ -1146,16 +1146,6 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         <string>Date de naissance </string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="la_date">
-       <property name="geometry">
-        <rect>
-         <x>450</x>
-         <y>110</y>
-         <width>101</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="cin">
        <property name="geometry">
         <rect>
@@ -1203,16 +1193,6 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        </property>
        <property name="text">
         <string>Date de réservation </string>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="date_res">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>250</y>
-         <width>110</width>
-         <height>22</height>
-        </rect>
        </property>
       </widget>
       <widget class="QLabel" name="label_4">
@@ -1307,6 +1287,26 @@ font: 8pt &quot;Segoe UI&quot;;</string>
         </property>
        </widget>
       </widget>
+      <widget class="QLineEdit" name="la_date">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>110</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="date_res">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>250</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -1326,7 +1326,7 @@ font: 8pt &quot;Segoe UI&quot;;</string>
        <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="title">
-       <string>Modifier</string>
+       <string>Modifier un client</string>
       </property>
       <widget class="QSpinBox" name="le_nbr2">
        <property name="geometry">
@@ -1482,16 +1482,6 @@ font: 8pt &quot;Segoe UI&quot;;</string>
         <string>Date de naissance </string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="la_date2">
-       <property name="geometry">
-        <rect>
-         <x>450</x>
-         <y>110</y>
-         <width>101</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="cin_3">
        <property name="geometry">
         <rect>
@@ -1541,16 +1531,6 @@ font: 8pt &quot;Segoe UI&quot;;</string>
         <string>Date de réservation </string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="date_res2">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>250</y>
-         <width>110</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
@@ -1588,6 +1568,26 @@ font: 8pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="text">
         <string>Modifier</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="la_date2">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>110</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="date_res2">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>240</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
        </property>
       </widget>
      </widget>
@@ -1678,7 +1678,7 @@ font: 8pt &quot;Segoe UI&quot;;</string>
        <string>PDF</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="stat_2">
+     <widget class="QPushButton" name="fd">
       <property name="geometry">
        <rect>
         <x>1160</x>
@@ -1688,20 +1688,20 @@ font: 8pt &quot;Segoe UI&quot;;</string>
        </rect>
       </property>
       <property name="text">
-       <string>Stat</string>
+       <string>Client Fidèle</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="fd">
+     <widget class="QPushButton" name="stat">
       <property name="geometry">
        <rect>
         <x>1160</x>
-        <y>230</y>
+        <y>220</y>
         <width>93</width>
         <height>28</height>
        </rect>
       </property>
       <property name="text">
-       <string>Client Fidèle</string>
+       <string>Statistique</string>
       </property>
      </widget>
     </widget>
@@ -1709,11 +1709,11 @@ font: 8pt &quot;Segoe UI&quot;;</string>
      <attribute name="title">
       <string>Mailing</string>
      </attribute>
-     <widget class="QPushButton" name="envoyer">
+     <widget class="QPushButton" name="sendBtn">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>380</y>
+        <x>830</x>
+        <y>370</y>
         <width>93</width>
         <height>29</height>
        </rect>
@@ -1725,7 +1725,7 @@ font: 8pt &quot;Segoe UI&quot;;</string>
        <string>Envoyer</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="mail">
+     <widget class="QLineEdit" name="rcpt">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -1769,7 +1769,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;Sujet :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="sujet">
+     <widget class="QLineEdit" name="subject">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -1782,8 +1782,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QTextEdit" name="textEdit_6">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>110</y>
+        <x>10</x>
+        <y>150</y>
         <width>151</width>
         <height>31</height>
        </rect>
@@ -1796,13 +1796,49 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;Message :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="msg">
+     <widget class="QLineEdit" name="file">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>170</x>
+        <y>110</y>
+        <width>351</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="browseBtn">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>110</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fichiers</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Joindre des fichiers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="msg">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
         <y>160</y>
-        <width>641</width>
-        <height>341</height>
+        <width>591</width>
+        <height>261</height>
        </rect>
       </property>
      </widget>

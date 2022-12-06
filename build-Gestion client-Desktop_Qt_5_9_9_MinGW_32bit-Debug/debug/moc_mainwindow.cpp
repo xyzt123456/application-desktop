@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[14];
-    char stringdata0[223];
+    QByteArrayData data[13];
+    char stringdata0[219];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,21 +39,19 @@ QT_MOC_LITERAL(4, 56, 21), // "on_b_modifier_clicked"
 QT_MOC_LITERAL(5, 78, 21), // "on_rechercher_clicked"
 QT_MOC_LITERAL(6, 100, 14), // "on_pdf_clicked"
 QT_MOC_LITERAL(7, 115, 14), // "on_tri_clicked"
-QT_MOC_LITERAL(8, 130, 18), // "on_envoyer_clicked"
-QT_MOC_LITERAL(9, 149, 22), // "on_stat_currentChanged"
-QT_MOC_LITERAL(10, 172, 5), // "index"
-QT_MOC_LITERAL(11, 178, 17), // "on_stat_2_clicked"
-QT_MOC_LITERAL(12, 196, 12), // "update_label"
-QT_MOC_LITERAL(13, 209, 13) // "on_fd_clicked"
+QT_MOC_LITERAL(8, 130, 12), // "update_label"
+QT_MOC_LITERAL(9, 143, 13), // "on_fd_clicked"
+QT_MOC_LITERAL(10, 157, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(11, 179, 20), // "on_browseBtn_clicked"
+QT_MOC_LITERAL(12, 200, 18) // "on_sendBtn_clicked"
 
     },
     "MainWindow\0on_b_ajouter_clicked\0\0"
     "on_b_supprimer_clicked\0on_b_modifier_clicked\0"
     "on_rechercher_clicked\0on_pdf_clicked\0"
-    "on_tri_clicked\0on_envoyer_clicked\0"
-    "on_stat_currentChanged\0index\0"
-    "on_stat_2_clicked\0update_label\0"
-    "on_fd_clicked"
+    "on_tri_clicked\0update_label\0on_fd_clicked\0"
+    "on_pushButton_clicked\0on_browseBtn_clicked\0"
+    "on_sendBtn_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -78,10 +76,10 @@ static const uint qt_meta_data_MainWindow[] = {
        6,    0,   73,    2, 0x08 /* Private */,
        7,    0,   74,    2, 0x08 /* Private */,
        8,    0,   75,    2, 0x08 /* Private */,
-       9,    1,   76,    2, 0x08 /* Private */,
-      11,    0,   79,    2, 0x08 /* Private */,
-      12,    0,   80,    2, 0x08 /* Private */,
-      13,    0,   81,    2, 0x08 /* Private */,
+       9,    0,   76,    2, 0x08 /* Private */,
+      10,    0,   77,    2, 0x08 /* Private */,
+      11,    0,   78,    2, 0x08 /* Private */,
+      12,    0,   79,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -91,7 +89,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -111,14 +109,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_rechercher_clicked(); break;
         case 4: _t->on_pdf_clicked(); break;
         case 5: _t->on_tri_clicked(); break;
-        case 6: _t->on_envoyer_clicked(); break;
-        //case 7: _t->on_stat_currentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        //case 8: _t->on_stat_2_clicked(); break;
-        case 9: _t->update_label(); break;
-        case 10: _t->on_fd_clicked(); break;
+        case 6: _t->update_label(); break;
+        case 7: _t->on_fd_clicked(); break;
+        //case 8: _t->on_pushButton_clicked(); break;
+        case 9: _t->on_browseBtn_clicked(); break;
+        case 10: _t->on_sendBtn_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject MainWindow::staticMetaObject = {

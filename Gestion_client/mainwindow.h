@@ -43,17 +43,29 @@ private slots:
 
     void on_tri_clicked();
 
-    void on_envoyer_clicked();
 
-    void on_stat_currentChanged(int index);
-
-    void on_stat_2_clicked();
     void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
     // ce slot est lancé à chaque réception d'un message de Arduino
         void on_fd_clicked();
+
+
+        void on_pushButton_clicked();
+
+        //void on_stat_clicked();
+
+        void on_browseBtn_clicked();
+
+        void on_sendBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     Client c;
+    QStringList files;
+      QSerialPort *serial;
+      QString mnomemp="localhost";
+      quint16 mport=3333;
+      QTcpSocket *mSocket;
+      //Smtp *smtp;
 
     QByteArray data; // variable contenant les données reçues
 
