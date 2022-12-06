@@ -235,7 +235,7 @@ void MainWindow::on_pdf_clicked()
 
 
 
-            painter.drawText(7565,i,query.value(6).toString());
+            painter.drawText(7565,i,query.value(7).toString());
              i = i +500;
 
         }
