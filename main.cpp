@@ -1,25 +1,18 @@
-#include "ig_materiel.h"
+#include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
-#include <QPlainTextEdit>
-#include<QTextDocument>
-#include<QtWidgets/QMainWindow>
-#include<QFile>
-#include<QFont>
-
-
+#include "login.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
     Connection c;
     bool test=c.createconnect();
-    Ig_Materiel w;
-    w.setWindowTitle("SQUADDESK");
+
+    login l;
     if(test)
-    {w.show();
+    {l.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -33,5 +26,4 @@ int main(int argc, char *argv[])
 
 
     return a.exec();
-
 }

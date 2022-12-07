@@ -1,26 +1,48 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef INTEGRATION_H
+#define INTEGRATION_H
 
-#include <QMainWindow>
+#include <QWidget>
+
+#include "employes.h"
 #include"materiel.h"
 #include"popup.h"
 #include"popupp.h"
-#include "arduino.h"
+#include"arduino.h"
+#include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class integration;
+}
 
-class Ig_Materiel : public QMainWindow
+class integration : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Ig_Materiel(QWidget *parent = nullptr);
-    ~Ig_Materiel();
-
+    explicit integration(QWidget *parent = nullptr);
+    ~integration();
 
 private slots:
+    void on_pb_ajouter_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pb_modifier_clicked();
+
+    void on_recherche_2_clicked();
+
+    void on_tri_id_clicked();
+
+    void on_tri_noun_clicked();
+
+
+
+    void on_PDF_clicked();
+
+    void on_statistique_clicked();
+
+    void on_qr_clicked();
+
     void on_pb_ajouter_m_clicked();
 
     void on_pb_supp_clicked();
@@ -28,7 +50,7 @@ private slots:
     void on_pb_modifier_m_clicked();
 
 
-
+//materiels
     void on_recherche_clicked();
 
     void on_pdf_clicked();
@@ -49,11 +71,13 @@ private slots:
     // ce slot est lancé à chaque réception d'un message de Arduino
 
 private:
-    Ui::MainWindow *ui;
+    Ui::integration *ui;
+    Employes E;
     Materiel m;
     PopUp *popUp;
     PopUpp *popUpp;
     QByteArray data; // variable contenant les données reçues
     Arduino A; // objet temporaire
 };
+
 #endif // MAINWINDOW_H

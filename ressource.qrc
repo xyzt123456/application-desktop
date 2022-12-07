@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/prefix1" lang="login"/>
+    <qresource prefix="/logo" lang="logo"/>
+    <qresource prefix="/">
+        <file>image/squad desk.png</file>
+    </qresource>
+</RCC>

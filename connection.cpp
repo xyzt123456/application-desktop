@@ -1,3 +1,4 @@
+
 #include "connection.h"
 
 Connection::Connection()
@@ -21,4 +22,3 @@ test=true;
 
     return  test;
 }
-void Connection::closeConnection(){db.close();}
